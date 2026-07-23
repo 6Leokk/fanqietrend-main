@@ -1,1 +1,272 @@
-{"date":"","prev_date":"","primary_channel":"male","types":[]}
+{
+  "date": "2026-07-23",
+  "prev_date": "",
+  "primary_channel": "male",
+  "types": [
+    {
+      "type": "all",
+      "url": "api/lastest/all.json",
+      "category_count": 37,
+      "book_count": 650
+    },
+    {
+      "type": "西方奇幻",
+      "channel": "male",
+      "key": "male:西方奇幻",
+      "url": "api/lastest/male_%E8%A5%BF%E6%96%B9%E5%A5%87%E5%B9%BB.json",
+      "book_count": 20
+    },
+    {
+      "type": "东方仙侠",
+      "channel": "male",
+      "key": "male:东方仙侠",
+      "url": "api/lastest/male_%E4%B8%9C%E6%96%B9%E4%BB%99%E4%BE%A0.json",
+      "book_count": 20
+    },
+    {
+      "type": "科幻末世",
+      "channel": "male",
+      "key": "male:科幻末世",
+      "url": "api/lastest/male_%E7%A7%91%E5%B9%BB%E6%9C%AB%E4%B8%96.json",
+      "book_count": 20
+    },
+    {
+      "type": "都市日常",
+      "channel": "male",
+      "key": "male:都市日常",
+      "url": "api/lastest/male_%E9%83%BD%E5%B8%82%E6%97%A5%E5%B8%B8.json",
+      "book_count": 20
+    },
+    {
+      "type": "都市修真",
+      "channel": "male",
+      "key": "male:都市修真",
+      "url": "api/lastest/male_%E9%83%BD%E5%B8%82%E4%BF%AE%E7%9C%9F.json",
+      "book_count": 20
+    },
+    {
+      "type": "都市高武",
+      "channel": "male",
+      "key": "male:都市高武",
+      "url": "api/lastest/male_%E9%83%BD%E5%B8%82%E9%AB%98%E6%AD%A6.json",
+      "book_count": 20
+    },
+    {
+      "type": "历史古代",
+      "channel": "male",
+      "key": "male:历史古代",
+      "url": "api/lastest/male_%E5%8E%86%E5%8F%B2%E5%8F%A4%E4%BB%A3.json",
+      "book_count": 20
+    },
+    {
+      "type": "战神赘婿",
+      "channel": "male",
+      "key": "male:战神赘婿",
+      "url": "api/lastest/male_%E6%88%98%E7%A5%9E%E8%B5%98%E5%A9%BF.json",
+      "book_count": 20
+    },
+    {
+      "type": "都市种田",
+      "channel": "male",
+      "key": "male:都市种田",
+      "url": "api/lastest/male_%E9%83%BD%E5%B8%82%E7%A7%8D%E7%94%B0.json",
+      "book_count": 20
+    },
+    {
+      "type": "传统玄幻",
+      "channel": "male",
+      "key": "male:传统玄幻",
+      "url": "api/lastest/male_%E4%BC%A0%E7%BB%9F%E7%8E%84%E5%B9%BB.json",
+      "book_count": 20
+    },
+    {
+      "type": "历史脑洞",
+      "channel": "male",
+      "key": "male:历史脑洞",
+      "url": "api/lastest/male_%E5%8E%86%E5%8F%B2%E8%84%91%E6%B4%9E.json",
+      "book_count": 20
+    },
+    {
+      "type": "悬疑脑洞",
+      "channel": "male",
+      "key": "male:悬疑脑洞",
+      "url": "api/lastest/male_%E6%82%AC%E7%96%91%E8%84%91%E6%B4%9E.json",
+      "book_count": 20
+    },
+    {
+      "type": "都市脑洞",
+      "channel": "male",
+      "key": "male:都市脑洞",
+      "url": "api/lastest/male_%E9%83%BD%E5%B8%82%E8%84%91%E6%B4%9E.json",
+      "book_count": 20
+    },
+    {
+      "type": "玄幻脑洞",
+      "channel": "male",
+      "key": "male:玄幻脑洞",
+      "url": "api/lastest/male_%E7%8E%84%E5%B9%BB%E8%84%91%E6%B4%9E.json",
+      "book_count": 20
+    },
+    {
+      "type": "悬疑灵异",
+      "channel": "male",
+      "key": "male:悬疑灵异",
+      "url": "api/lastest/male_%E6%82%AC%E7%96%91%E7%81%B5%E5%BC%82.json",
+      "book_count": 20
+    },
+    {
+      "type": "抗战谍战",
+      "channel": "male",
+      "key": "male:抗战谍战",
+      "url": "api/lastest/male_%E6%8A%97%E6%88%98%E8%B0%8D%E6%88%98.json",
+      "book_count": 20
+    },
+    {
+      "type": "游戏体育",
+      "channel": "male",
+      "key": "male:游戏体育",
+      "url": "api/lastest/male_%E6%B8%B8%E6%88%8F%E4%BD%93%E8%82%B2.json",
+      "book_count": 20
+    },
+    {
+      "type": "动漫衍生",
+      "channel": "male",
+      "key": "male:动漫衍生",
+      "url": "api/lastest/male_%E5%8A%A8%E6%BC%AB%E8%A1%8D%E7%94%9F.json",
+      "book_count": 20
+    },
+    {
+      "type": "男频衍生",
+      "channel": "male",
+      "key": "male:男频衍生",
+      "url": "api/lastest/male_%E7%94%B7%E9%A2%91%E8%A1%8D%E7%94%9F.json",
+      "book_count": 20
+    },
+    {
+      "type": "古风世情",
+      "channel": "female",
+      "key": "female:古风世情",
+      "url": "api/lastest/female_%E5%8F%A4%E9%A3%8E%E4%B8%96%E6%83%85.json",
+      "book_count": 15
+    },
+    {
+      "type": "科幻末世",
+      "channel": "female",
+      "key": "female:科幻末世",
+      "url": "api/lastest/female_%E7%A7%91%E5%B9%BB%E6%9C%AB%E4%B8%96.json",
+      "book_count": 15
+    },
+    {
+      "type": "游戏体育",
+      "channel": "female",
+      "key": "female:游戏体育",
+      "url": "api/lastest/female_%E6%B8%B8%E6%88%8F%E4%BD%93%E8%82%B2.json",
+      "book_count": 15
+    },
+    {
+      "type": "女频衍生",
+      "channel": "female",
+      "key": "female:女频衍生",
+      "url": "api/lastest/female_%E5%A5%B3%E9%A2%91%E8%A1%8D%E7%94%9F.json",
+      "book_count": 15
+    },
+    {
+      "type": "玄幻言情",
+      "channel": "female",
+      "key": "female:玄幻言情",
+      "url": "api/lastest/female_%E7%8E%84%E5%B9%BB%E8%A8%80%E6%83%85.json",
+      "book_count": 15
+    },
+    {
+      "type": "种田",
+      "channel": "female",
+      "key": "female:种田",
+      "url": "api/lastest/female_%E7%A7%8D%E7%94%B0.json",
+      "book_count": 15
+    },
+    {
+      "type": "年代",
+      "channel": "female",
+      "key": "female:年代",
+      "url": "api/lastest/female_%E5%B9%B4%E4%BB%A3.json",
+      "book_count": 15
+    },
+    {
+      "type": "现言脑洞",
+      "channel": "female",
+      "key": "female:现言脑洞",
+      "url": "api/lastest/female_%E7%8E%B0%E8%A8%80%E8%84%91%E6%B4%9E.json",
+      "book_count": 15
+    },
+    {
+      "type": "宫斗宅斗",
+      "channel": "female",
+      "key": "female:宫斗宅斗",
+      "url": "api/lastest/female_%E5%AE%AB%E6%96%97%E5%AE%85%E6%96%97.json",
+      "book_count": 15
+    },
+    {
+      "type": "悬疑脑洞",
+      "channel": "female",
+      "key": "female:悬疑脑洞",
+      "url": "api/lastest/female_%E6%82%AC%E7%96%91%E8%84%91%E6%B4%9E.json",
+      "book_count": 15
+    },
+    {
+      "type": "古言脑洞",
+      "channel": "female",
+      "key": "female:古言脑洞",
+      "url": "api/lastest/female_%E5%8F%A4%E8%A8%80%E8%84%91%E6%B4%9E.json",
+      "book_count": 15
+    },
+    {
+      "type": "快穿",
+      "channel": "female",
+      "key": "female:快穿",
+      "url": "api/lastest/female_%E5%BF%AB%E7%A9%BF.json",
+      "book_count": 15
+    },
+    {
+      "type": "青春甜宠",
+      "channel": "female",
+      "key": "female:青春甜宠",
+      "url": "api/lastest/female_%E9%9D%92%E6%98%A5%E7%94%9C%E5%AE%A0.json",
+      "book_count": 15
+    },
+    {
+      "type": "星光璀璨",
+      "channel": "female",
+      "key": "female:星光璀璨",
+      "url": "api/lastest/female_%E6%98%9F%E5%85%89%E7%92%80%E7%92%A8.json",
+      "book_count": 15
+    },
+    {
+      "type": "女频悬疑",
+      "channel": "female",
+      "key": "female:女频悬疑",
+      "url": "api/lastest/female_%E5%A5%B3%E9%A2%91%E6%82%AC%E7%96%91.json",
+      "book_count": 15
+    },
+    {
+      "type": "职场婚恋",
+      "channel": "female",
+      "key": "female:职场婚恋",
+      "url": "api/lastest/female_%E8%81%8C%E5%9C%BA%E5%A9%9A%E6%81%8B.json",
+      "book_count": 15
+    },
+    {
+      "type": "豪门总裁",
+      "channel": "female",
+      "key": "female:豪门总裁",
+      "url": "api/lastest/female_%E8%B1%AA%E9%97%A8%E6%80%BB%E8%A3%81.json",
+      "book_count": 15
+    },
+    {
+      "type": "民国言情",
+      "channel": "female",
+      "key": "female:民国言情",
+      "url": "api/lastest/female_%E6%B0%91%E5%9B%BD%E8%A8%80%E6%83%85.json",
+      "book_count": 15
+    }
+  ]
+}

@@ -1,24 +1,11 @@
 {
   "date": "2026-07-23",
-  "prev_date": "",
   "primary_channel": "male",
   "categories": [
     {
       "name": "西方奇幻",
       "channel": "male",
       "key": "male:西方奇幻",
-      "trend": {
-        "name": "西方奇幻",
-        "channel": "male",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "龙骑士：开局被自己的银龙反骑",
@@ -186,18 +173,6 @@
       "name": "东方仙侠",
       "channel": "male",
       "key": "male:东方仙侠",
-      "trend": {
-        "name": "东方仙侠",
-        "channel": "male",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "变身小萝莉，我竟是天道傀儡？",
@@ -365,18 +340,6 @@
       "name": "科幻末世",
       "channel": "male",
       "key": "male:科幻末世",
-      "trend": {
-        "name": "科幻末世",
-        "channel": "male",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "全民穿越！我在末日世界养城兽",
@@ -544,18 +507,6 @@
       "name": "都市日常",
       "channel": "male",
       "key": "male:都市日常",
-      "trend": {
-        "name": "都市日常",
-        "channel": "male",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "穿书反派，把阴湿女主养成病娇了",
@@ -723,18 +674,6 @@
       "name": "都市修真",
       "channel": "male",
       "key": "male:都市修真",
-      "trend": {
-        "name": "都市修真",
-        "channel": "male",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "路遇黄皮子讨封，封它当玉皇大帝",
@@ -902,18 +841,6 @@
       "name": "都市高武",
       "channel": "male",
       "key": "male:都市高武",
-      "trend": {
-        "name": "都市高武",
-        "channel": "male",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "我都宇宙之主了，你们还在地球？",
@@ -1081,18 +1008,6 @@
       "name": "历史古代",
       "channel": "male",
       "key": "male:历史古代",
-      "trend": {
-        "name": "历史古代",
-        "channel": "male",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "等一下！什么叫我想不想当皇帝？",
@@ -1260,18 +1175,6 @@
       "name": "战神赘婿",
       "channel": "male",
       "key": "male:战神赘婿",
-      "trend": {
-        "name": "战神赘婿",
-        "channel": "male",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "出门捡垃圾，我被美女总裁强推了",
@@ -1439,18 +1342,6 @@
       "name": "都市种田",
       "channel": "male",
       "key": "male:都市种田",
-      "trend": {
-        "name": "都市种田",
-        "channel": "male",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "重生后，姐姐非要嫁给我",
@@ -1618,18 +1509,6 @@
       "name": "传统玄幻",
       "channel": "male",
       "key": "male:传统玄幻",
-      "trend": {
-        "name": "传统玄幻",
-        "channel": "male",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "开局法相，未婚妻不退婚",
@@ -1797,18 +1676,6 @@
       "name": "历史脑洞",
       "channel": "male",
       "key": "male:历史脑洞",
-      "trend": {
-        "name": "历史脑洞",
-        "channel": "male",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "大明：开局筋斗云，老朱馋哭了！",
@@ -1976,18 +1843,6 @@
       "name": "悬疑脑洞",
       "channel": "male",
       "key": "male:悬疑脑洞",
-      "trend": {
-        "name": "悬疑脑洞",
-        "channel": "male",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "盗墓：背棺送葬，奖励龙象般若功",
@@ -2155,18 +2010,6 @@
       "name": "都市脑洞",
       "channel": "male",
       "key": "male:都市脑洞",
-      "trend": {
-        "name": "都市脑洞",
-        "channel": "male",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "上恋综后，和清冷设计师爆火全网",
@@ -2334,18 +2177,6 @@
       "name": "玄幻脑洞",
       "channel": "male",
       "key": "male:玄幻脑洞",
-      "trend": {
-        "name": "玄幻脑洞",
-        "channel": "male",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "从成为一只白鹿开始的传说",
@@ -2513,18 +2344,6 @@
       "name": "悬疑灵异",
       "channel": "male",
       "key": "male:悬疑灵异",
-      "trend": {
-        "name": "悬疑灵异",
-        "channel": "male",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "悬案真凶竟然是他",
@@ -2692,18 +2511,6 @@
       "name": "抗战谍战",
       "channel": "male",
       "key": "male:抗战谍战",
-      "trend": {
-        "name": "抗战谍战",
-        "channel": "male",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "辽东沦丧前夜，率军兵谏少帅",
@@ -2871,18 +2678,6 @@
       "name": "游戏体育",
       "channel": "male",
       "key": "male:游戏体育",
-      "trend": {
-        "name": "游戏体育",
-        "channel": "male",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "年龄差契约系统？补药电我啊啊啊",
@@ -3050,18 +2845,6 @@
       "name": "动漫衍生",
       "channel": "male",
       "key": "male:动漫衍生",
-      "trend": {
-        "name": "动漫衍生",
-        "channel": "male",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "铠甲：捡到封魔盒后，我不吃牛肉",
@@ -3229,18 +3012,6 @@
       "name": "男频衍生",
       "channel": "male",
       "key": "male:男频衍生",
-      "trend": {
-        "name": "男频衍生",
-        "channel": "male",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "四合院，哈军工副院，部下李云龙",
@@ -3408,18 +3179,6 @@
       "name": "古风世情",
       "channel": "female",
       "key": "female:古风世情",
-      "trend": {
-        "name": "古风世情",
-        "channel": "female",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "将门有朵病娇花",
@@ -3547,18 +3306,6 @@
       "name": "科幻末世",
       "channel": "female",
       "key": "female:科幻末世",
-      "trend": {
-        "name": "科幻末世",
-        "channel": "female",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "宿舍求生：从刷广告开始变强",
@@ -3686,18 +3433,6 @@
       "name": "游戏体育",
       "channel": "female",
       "key": "female:游戏体育",
-      "trend": {
-        "name": "游戏体育",
-        "channel": "female",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "游戏入侵：全服笑我捡垃圾",
@@ -3825,18 +3560,6 @@
       "name": "女频衍生",
       "channel": "female",
       "key": "female:女频衍生",
-      "trend": {
-        "name": "女频衍生",
-        "channel": "female",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "杉杉来迟遇宴臣",
@@ -3964,18 +3687,6 @@
       "name": "玄幻言情",
       "channel": "female",
       "key": "female:玄幻言情",
-      "trend": {
-        "name": "玄幻言情",
-        "channel": "female",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "穿成龙傲天的早逝病弱崽",
@@ -4103,18 +3814,6 @@
       "name": "种田",
       "channel": "female",
       "key": "female:种田",
-      "trend": {
-        "name": "种田",
-        "channel": "female",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "家徒四壁我养活两个兽世哥哥",
@@ -4242,18 +3941,6 @@
       "name": "年代",
       "channel": "female",
       "key": "female:年代",
-      "trend": {
-        "name": "年代",
-        "channel": "female",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "糙汉军官在大西北养了个娇气包",
@@ -4381,18 +4068,6 @@
       "name": "现言脑洞",
       "channel": "female",
       "key": "female:现言脑洞",
-      "trend": {
-        "name": "现言脑洞",
-        "channel": "female",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "小炮灰变美后，抢了财阀太子爷",
@@ -4520,18 +4195,6 @@
       "name": "宫斗宅斗",
       "channel": "female",
       "key": "female:宫斗宅斗",
-      "trend": {
-        "name": "宫斗宅斗",
-        "channel": "female",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "入宫即高位，我是陛下表妹我怕谁",
@@ -4659,18 +4322,6 @@
       "name": "悬疑脑洞",
       "channel": "female",
       "key": "female:悬疑脑洞",
-      "trend": {
-        "name": "悬疑脑洞",
-        "channel": "female",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "没血条？你管这绝美NPC叫病弱",
@@ -4798,18 +4449,6 @@
       "name": "古言脑洞",
       "channel": "female",
       "key": "female:古言脑洞",
-      "trend": {
-        "name": "古言脑洞",
-        "channel": "female",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "脑子一热，强吻了我哥的同窗好友",
@@ -4937,18 +4576,6 @@
       "name": "快穿",
       "channel": "female",
       "key": "female:快穿",
-      "trend": {
-        "name": "快穿",
-        "channel": "female",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "快穿：笨蛋美人，但恶毒初恋",
@@ -5076,18 +4703,6 @@
       "name": "青春甜宠",
       "channel": "female",
       "key": "female:青春甜宠",
-      "trend": {
-        "name": "青春甜宠",
-        "channel": "female",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "盛夏青苹果",
@@ -5215,18 +4830,6 @@
       "name": "星光璀璨",
       "channel": "female",
       "key": "female:星光璀璨",
-      "trend": {
-        "name": "星光璀璨",
-        "channel": "female",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "万人迷神颜顶流只想演炮灰",
@@ -5354,18 +4957,6 @@
       "name": "女频悬疑",
       "channel": "female",
       "key": "female:女频悬疑",
-      "trend": {
-        "name": "女频悬疑",
-        "channel": "female",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "盗墓：长生都是有纹身的",
@@ -5493,18 +5084,6 @@
       "name": "职场婚恋",
       "channel": "female",
       "key": "female:职场婚恋",
-      "trend": {
-        "name": "职场婚恋",
-        "channel": "female",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "社恐乖乖女意外怀了红毛的崽后",
@@ -5632,18 +5211,6 @@
       "name": "豪门总裁",
       "channel": "female",
       "key": "female:豪门总裁",
-      "trend": {
-        "name": "豪门总裁",
-        "channel": "female",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "妹宝假装被催眠，阴湿哥哥上瘾了",
@@ -5771,18 +5338,6 @@
       "name": "民国言情",
       "channel": "female",
       "key": "female:民国言情",
-      "trend": {
-        "name": "民国言情",
-        "channel": "female",
-        "new_count": 0,
-        "dropped_count": 0,
-        "new_books": [],
-        "dropped_books": [],
-        "top_risers": [],
-        "top_fallers": [],
-        "reads_growth": [],
-        "summary": "首日数据，暂无趋势对比。"
-      },
       "books": [
         {
           "title": "穿越民国，我爹是东北王",
@@ -5906,5 +5461,11 @@
         }
       ]
     }
-  ]
+  ],
+  "meta": {
+    "male_categories": 19,
+    "female_categories": 18,
+    "male_books": 380,
+    "female_books": 270
+  }
 }
