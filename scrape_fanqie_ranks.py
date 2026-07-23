@@ -325,6 +325,13 @@ def run_scraper(sleep_sec=5):
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump(snapshot, f, ensure_ascii=False, indent=2)
 
+    # 兼容旧版 Actions 跳过检查（仍查找 fanqie_female_new_ranks_*）
+    # 写入同内容别名，避免同日重复全量爬取；前端/构建优先读 fanqie_ranks_*
+    legacy_file = os.path.join(OUTPUT_DIR, f"fanqie_female_new_ranks_{date_str}.json")
+    if os.path.abspath(legacy_file) != os.path.abspath(output_file):
+        with open(legacy_file, "w", encoding="utf-8") as f:
+            json.dump(snapshot, f, ensure_ascii=False, indent=2)
+
     print(f"\n✅ 抓取完成：{output_file}")
     print(
         f"   男频 {snapshot['meta']['male_categories']} 类 / "
