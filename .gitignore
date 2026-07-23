@@ -3,3 +3,6 @@
 
 # scraper resume state
 data/task_state_*.json
+
+.venv/
+__pycache__/

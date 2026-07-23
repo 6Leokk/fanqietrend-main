@@ -18,6 +18,68 @@ SNAPSHOT_PREFIX = "fanqie_ranks_"
 # 兼容旧女频快照（只读，迁移期）
 LEGACY_SNAPSHOT_GLOB = "fanqie_female_new_ranks_*.json"
 
+# OpenCode Zen 免费接口（key=public，无需 GitHub Secrets）
+# 文档: https://opencode.ai/docs/zen
+DEFAULT_API_BASE_URL = "https://opencode.ai/zen/v1"
+DEFAULT_API_KEY = "public"
+DEFAULT_API_MODEL = "deepseek-v4-flash-free"
+# 免费模型限流时自动回退（仍全部免费）
+FREE_MODEL_FALLBACKS = [
+    "deepseek-v4-flash-free",
+    "laguna-s-2.1-free",
+    "big-pickle",
+    "mimo-v2.5-free",
+]
+# 免费额度有限：默认只给男频做 AI，女频走规则摘要
+DEFAULT_AI_CHANNELS = "male"
+
+
+def is_rate_limit_error(err: Exception) -> bool:
+    text = str(err).lower()
+    return any(
+        x in text
+        for x in ("rate limit", "freeusagelimit", "429", "too many", "usage limit")
+    )
+
+
+def chat_completion(client, model: str, messages: list, max_tokens: int = 500,
+                    temperature: float = 0.7):
+    """调用 chat.completions，主模型限流时自动切换免费备用模型。"""
+    import time
+
+    models = []
+    for m in [model] + FREE_MODEL_FALLBACKS:
+        if m and m not in models:
+            models.append(m)
+
+    last_err = None
+    for mid in models:
+        for attempt in range(1, 4):
+            try:
+                response = client.chat.completions.create(
+                    model=mid,
+                    messages=messages,
+                    max_tokens=max_tokens,
+                    temperature=temperature,
+                )
+                if mid != model:
+                    print(f"    🔁 已切换免费模型: {mid}")
+                return response, mid
+            except Exception as e:
+                last_err = e
+                if is_rate_limit_error(e):
+                    wait = min(45, 8 * attempt)
+                    print(f"    ⏳ {mid} 限流 (第{attempt}次)，{wait}s 后重试/换模...")
+                    time.sleep(wait)
+                    # 同一模型重试 2 次后换下一个免费模型
+                    if attempt >= 2:
+                        break
+                else:
+                    # 非限流错误：换模型再试
+                    print(f"    ⚠️  {mid} 失败: {e}")
+                    break
+    raise last_err or RuntimeError("AI 调用失败")
+
 
 def cat_key(channel: str, name: str) -> str:
     """跨频道唯一分类键。"""
@@ -238,7 +300,7 @@ def build_ai_prompt(cat_name: str, cat: dict, trend: dict) -> str:
 要求：每个板块2-3句话，总字数250字以内。语言简洁专业，像行业快报。"""
 
 
-BATCH_SIZE = 3  # 每批合并的分类数
+BATCH_SIZE = 2  # 免费接口限流较严，每批少合并几个
 
 MARKET_PERIODS = [("7", 7), ("14", 14), ("30", 30), ("all", None)]
 
@@ -861,8 +923,8 @@ def enrich_market_summary_with_ai(payload: dict, api_key: str,
 
     try:
         client = OpenAI(api_key=api_key, base_url=base_url, timeout=120.0)
-        response = client.chat.completions.create(
-            model=model,
+        response, used_model = chat_completion(
+            client, model,
             messages=[{"role": "user", "content": build_market_ai_prompt(payload)}],
             max_tokens=900,
             temperature=0.5,
@@ -872,7 +934,7 @@ def enrich_market_summary_with_ai(payload: dict, api_key: str,
             if key in payload["periods"] and isinstance(summary, str) and summary.strip():
                 payload["periods"][key]["summary"] = summary.strip()
                 payload["periods"][key]["source"] = "ai"
-        print("✅ 全站热点 AI 总结已生成")
+        print(f"✅ 全站热点 AI 总结已生成 ({used_model})")
     except Exception as e:
         print(f"⚠️  全站热点 AI 总结失败，使用规则兜底: {e}")
 
@@ -915,13 +977,20 @@ def generate_ai_summaries(categories: list, trends: dict,
 
     client = OpenAI(api_key=api_key, base_url=base_url, timeout=120.0)
     existing_trends = existing_trends or {}
+    ai_channels = {
+        c.strip()
+        for c in os.environ.get("AI_CHANNELS", DEFAULT_AI_CHANNELS).split(",")
+        if c.strip()
+    }
 
     # 1. 筛选需要生成总结的分类
     pending = []  # (cat_name, cat_data, trend_data)
     skipped = 0
+    channel_skipped = 0
 
     for cat in categories:
         cat_name = cat["name"]
+        channel = cat.get("channel", "male")
         key = ensure_cat_key(cat)
         if key not in trends and cat_name not in trends:
             continue
@@ -931,6 +1000,13 @@ def generate_ai_summaries(categories: list, trends: dict,
         # 统一写回 key
         if key not in trends:
             trends[key] = trend_ref
+
+        # 默认只 AI 男频，女频用规则摘要（省免费额度）
+        if ai_channels and channel not in ai_channels:
+            if not trend_ref.get("summary") or is_rule_summary(trend_ref.get("summary", "")):
+                trends[key]["summary"] = generate_trend_summary_text(cat_name, trend_ref)
+            channel_skipped += 1
+            continue
 
         if not force:
             existing_summary = (
@@ -943,6 +1019,9 @@ def generate_ai_summaries(categories: list, trends: dict,
                 continue
 
         pending.append((cat_name, cat, trends[key]))
+
+    if channel_skipped > 0:
+        print(f"  🎯 AI 频道限制 {sorted(ai_channels)}：{channel_skipped} 个分类用规则摘要")
 
     if skipped > 0:
         print(f"  ⏭️  跳过 {skipped} 个已有 AI 总结的分类")
@@ -968,57 +1047,47 @@ def generate_ai_summaries(categories: list, trends: dict,
 
         prompt = build_batch_ai_prompt(batch)
 
-        max_retries = 3
         batch_success = False
-        for attempt in range(1, max_retries + 1):
-            try:
-                response = client.chat.completions.create(
-                    model=model,
-                    messages=[{"role": "user", "content": prompt}],
-                    max_tokens=500 * len(batch),
-                    temperature=0.7,
+        try:
+            response, used_model = chat_completion(
+                client, model,
+                messages=[{"role": "user", "content": prompt}],
+                max_tokens=500 * len(batch),
+                temperature=0.7,
+            )
+            content = response.choices[0].message.content
+            if not content or not content.strip():
+                raise ValueError("API 返回空内容")
+
+            parsed = parse_batch_response(content, batch_names)
+            if parsed:
+                for name, summary in parsed.items():
+                    matched = [b for b in batch if b[0] == name]
+                    for m_name, m_cat, m_trend in matched:
+                        m_key = ensure_cat_key(m_cat)
+                        trends[m_key]["summary"] = summary
+                        print(f"    ✅ {m_cat.get('channel', '')}/{name} ({used_model})")
+
+                for name in batch_names:
+                    if name not in parsed:
+                        print(f"    ⚠️  未解析到: {name}（将单独重试）")
+                        failed_cats.append(
+                            next(b for b in batch if b[0] == name)
+                        )
+
+                _save_trends_incremental(
+                    trend_path, trend_date, prev_date, trends
                 )
-                content = response.choices[0].message.content
-                if not content or not content.strip():
-                    raise ValueError("API 返回空内容")
-
-                # 解析批量响应
-                parsed = parse_batch_response(content, batch_names)
-
-                if parsed:
-                    for name, summary in parsed.items():
-                        # 按显示名回写到对应 trend（可能多个频道同名，取本批匹配项）
-                        matched = [b for b in batch if b[0] == name]
-                        for m_name, m_cat, m_trend in matched:
-                            m_key = ensure_cat_key(m_cat)
-                            trends[m_key]["summary"] = summary
-                            print(f"    ✅ {m_cat.get('channel', '')}/{name}")
-
-                    for name in batch_names:
-                        if name not in parsed:
-                            print(f"    ⚠️  未解析到: {name}（将单独重试）")
-                            failed_cats.append(
-                                next(b for b in batch if b[0] == name)
-                            )
-
-                    # 增量保存
-                    _save_trends_incremental(
-                        trend_path, trend_date, prev_date, trends
-                    )
-                    batch_success = True
-                    break
-                else:
-                    raise ValueError("批量响应解析失败，未匹配到任何分类")
-
-            except Exception as e:
-                print(f"    ⚠️  第 {attempt} 次失败: {e}")
-                if attempt < max_retries:
-                    import time
-                    time.sleep(5 * attempt)
+                batch_success = True
+                import time
+                time.sleep(2)
+            else:
+                raise ValueError("批量响应解析失败，未匹配到任何分类")
+        except Exception as e:
+            print(f"    ❌ 批量失败: {e}")
 
         if not batch_success:
-            print(f"    ❌ 批量生成失败（已重试 {max_retries} 次），"
-                  f"将逐个重试")
+            print("    ↪️  将逐个重试本批分类")
             failed_cats.extend(batch)
 
     # 3. 对失败的分类逐个重试（降级为单分类 prompt）
@@ -1027,31 +1096,27 @@ def generate_ai_summaries(categories: list, trends: dict,
         for cat_name, cat, trend in failed_cats:
             key = ensure_cat_key(cat)
             prompt = build_ai_prompt(cat_name, cat, trend)
-            max_retries = 3
             success = False
-            for attempt in range(1, max_retries + 1):
-                try:
-                    response = client.chat.completions.create(
-                        model=model,
-                        messages=[{"role": "user", "content": prompt}],
-                        max_tokens=500,
-                        temperature=0.7,
-                    )
-                    content = response.choices[0].message.content
-                    if not content or not content.strip():
-                        raise ValueError("API 返回空内容")
-                    trends[key]["summary"] = content.strip()
-                    print(f"    ✅ {cat.get('channel', '')}/{cat_name}")
-                    _save_trends_incremental(
-                        trend_path, trend_date, prev_date, trends
-                    )
-                    success = True
-                    break
-                except Exception as e:
-                    print(f"    ⚠️  {cat_name} 第 {attempt} 次失败: {e}")
-                    if attempt < max_retries:
-                        import time
-                        time.sleep(5 * attempt)
+            try:
+                response, used_model = chat_completion(
+                    client, model,
+                    messages=[{"role": "user", "content": prompt}],
+                    max_tokens=500,
+                    temperature=0.7,
+                )
+                content = response.choices[0].message.content
+                if not content or not content.strip():
+                    raise ValueError("API 返回空内容")
+                trends[key]["summary"] = content.strip()
+                print(f"    ✅ {cat.get('channel', '')}/{cat_name} ({used_model})")
+                _save_trends_incremental(
+                    trend_path, trend_date, prev_date, trends
+                )
+                success = True
+                import time
+                time.sleep(2)
+            except Exception as e:
+                print(f"    ❌ {cat_name} 最终失败: {e}")
 
             if not success:
                 print(f"    ❌ {cat_name} 最终失败")
@@ -1162,14 +1227,18 @@ def main():
             for cat in latest_data["categories"]
         }
 
-    # ========== AI 总结：通过 API_BASE_URL / API_KEY / API_MODEL 配置 ==========
-    api_base_url = os.environ.get("API_BASE_URL", "")
-    api_key = os.environ.get("API_KEY", "")
-    api_model = os.environ.get("API_MODEL", "")
+    # ========== AI 总结：默认 OpenCode 免费 deepseek-v4-flash-free ==========
+    # 空字符串（如未配置的 GitHub Secrets）会回落到公开免费配置，无需 Secrets
+    api_base_url = (os.environ.get("API_BASE_URL") or DEFAULT_API_BASE_URL).strip()
+    api_key = (os.environ.get("API_KEY") or DEFAULT_API_KEY).strip()
+    api_model = (os.environ.get("API_MODEL") or DEFAULT_API_MODEL).strip()
+    # 显式关闭：API_KEY=off / none / disable
+    ai_disabled = api_key.lower() in {"off", "none", "disable", "disabled", "0", "false"}
 
-    if api_base_url and api_key and api_model:
+    if not ai_disabled and api_base_url and api_key and api_model:
         print(f"\n正在使用 {api_model} 生成 AI 总结...")
         print(f"  API: {api_base_url}")
+        print(f"  Key: {'public(free)' if api_key == 'public' else '***'}")
         trends = generate_ai_summaries(
             latest_data["categories"], trends,
             api_key, api_base_url, api_model,
@@ -1180,8 +1249,7 @@ def main():
             prev_date=prev_date
         )
     else:
-        missing = [k for k, v in {"API_BASE_URL": api_base_url, "API_KEY": api_key, "API_MODEL": api_model}.items() if not v]
-        print(f"\n未配置 AI 服务（缺少: {', '.join(missing)}），使用规则摘要替代。")
+        print("\nAI 已关闭或未配置，使用规则摘要替代。")
         for key, trend in trends.items():
             display_name = trend.get("name") or key.split(":", 1)[-1]
             old = (

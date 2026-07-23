@@ -5,8 +5,8 @@
   "periods": {
     "7": {
       "period": "近 7 日",
-      "source": "rule",
-      "summary": "近 7 日暂无足够数据判断全站热点。",
+      "source": "ai",
+      "summary": "近 7 日全站暂无有效统计数据，综合赛道、具体分类及高频题材均未出现明确增长或新书题材，无法判断热点趋势。",
       "fallback_summary": "近 7 日暂无足够数据判断全站热点。",
       "hot_genres": [],
       "hot_types": [],
@@ -14,8 +14,8 @@
     },
     "14": {
       "period": "近 14 日",
-      "source": "rule",
-      "summary": "近 14 日暂无足够数据判断全站热点。",
+      "source": "ai",
+      "summary": "近 14 日全站暂无有效统计数据，综合赛道、具体分类及高频题材均未出现明确增长或新书题材，无法判断热点趋势。",
       "fallback_summary": "近 14 日暂无足够数据判断全站热点。",
       "hot_genres": [],
       "hot_types": [],
@@ -23,8 +23,8 @@
     },
     "30": {
       "period": "近 30 日",
-      "source": "rule",
-      "summary": "近 30 日暂无足够数据判断全站热点。",
+      "source": "ai",
+      "summary": "近 30 日全站暂无有效统计数据，综合赛道、具体分类及高频题材均未出现明确增长或新书题材，无法判断热点趋势。",
       "fallback_summary": "近 30 日暂无足够数据判断全站热点。",
       "hot_genres": [],
       "hot_types": [],
@@ -32,8 +32,8 @@
     },
     "all": {
       "period": "全部样本",
-      "source": "rule",
-      "summary": "全部样本暂无足够数据判断全站热点。",
+      "source": "ai",
+      "summary": "全部样本暂无有效统计数据，综合赛道、具体分类及高频题材均未出现明确增长或新书题材，无法判断热点趋势。",
       "fallback_summary": "全部样本暂无足够数据判断全站热点。",
       "hot_genres": [],
       "hot_types": [],

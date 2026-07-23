@@ -12,7 +12,7 @@
 |------|------|
 | 🕷️ 双频道爬取 | **男频**全量 Top 30；**女频**辅助 Top 15 |
 | 📊 趋势对比 | 新上榜 / 掉榜 / 排名变化 / 阅读量增长 |
-| 🤖 AI 风向分析 | OpenAI 兼容 API；未配置时规则兜底 |
+| 🤖 AI 风向分析 | 默认 OpenCode 免费 `deepseek-v4-flash-free`（key=`public`），限流自动换免费备用模；失败则规则兜底 |
 | 🧭 类型风向标 | 多日聚合，男频赛道优先 |
 | 🖥️ 看板 | 侧边栏可切换男频 / 女频 |
 | ⚡ 自动化 | GitHub Actions + GitHub Pages |
@@ -29,7 +29,10 @@
 
 1. Fork 本仓库
 2. 开启 **Settings → Pages → Source: GitHub Actions**
-3. 可选：配置 AI Secrets（`API_BASE_URL` / `API_KEY` / `API_MODEL`）
+3. **无需配置 Secrets**：默认使用 OpenCode 免费接口
+   - `API_BASE_URL=https://opencode.ai/zen/v1`
+   - `API_KEY=public`
+   - `API_MODEL=deepseek-v4-flash-free`
 4. **Actions → Daily Fanqie Rank Scraper → Run workflow**
 
 ### 2. 自动更新
@@ -117,9 +120,11 @@ fanqietrend-main/
 
 ## 📝 说明
 
-- **不配置 AI Secret 也能用**，会走规则摘要。
+- **默认启用 AI**（OpenCode 公开免费 key=`public`），不把密钥放进 GitHub Secrets。
+- 免费接口有全局限流；主模型不可用时自动回退 `laguna-s-2.1-free` 等免费模型。
+- 默认只对**男频**分类做 AI 总结（`AI_CHANNELS=male`），女频用规则摘要省额度。
+- 若要关闭 AI：环境变量 `API_KEY=off`。
 - 男女频存在同名分类（如「科幻末世」），内部用 `channel:name` 作唯一键。
-- 历史 `fanqie_female_new_ranks_*` 为上游女频格式，本版已切换为 `fanqie_ranks_*`。
 
 ---
 
