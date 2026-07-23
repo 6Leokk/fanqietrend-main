@@ -4,21 +4,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const rangeButtons = document.querySelectorAll('.range-btn');
     const cacheBuster = `v=${Math.floor(Date.now() / 600000)}`;
 
-    let categories = [];
+    let categories = []; // [{name, key, channel}]
     let trendRows = [];
     let latestData = null;
     let marketSummaryData = null;
-    let selectedCategory = '';
+    let selectedCategory = ''; // display name within current channel
+    let selectedCategoryKey = '';
     let selectedDays = 7;
+    let currentChannel = 'male';
 
     const genreGroups = [
-        { name: '古风言情', categories: ['古风世情', '古言脑洞', '宫斗宅斗', '种田'] },
-        { name: '现代言情', categories: ['现言脑洞', '豪门总裁', '职场婚恋', '青春甜宠'] },
-        { name: '幻想言情', categories: ['玄幻言情', '科幻末世', '悬疑脑洞', '女频悬疑'] },
-        { name: '快穿衍生', categories: ['快穿', '女频衍生'] },
-        { name: '年代民国', categories: ['年代', '民国言情'] },
-        { name: '娱乐星光', categories: ['星光璀璨'] },
-        { name: '游戏体育', categories: ['游戏体育'] },
+        // 男频
+        { name: '东方玄幻', channel: 'male', categories: ['东方仙侠', '传统玄幻', '玄幻脑洞', '都市修真'] },
+        { name: '西方奇幻', channel: 'male', categories: ['西方奇幻'] },
+        { name: '都市高武', channel: 'male', categories: ['都市高武', '都市日常', '都市脑洞', '都市种田', '战神赘婿'] },
+        { name: '历史抗战', channel: 'male', categories: ['历史古代', '历史脑洞', '抗战谍战'] },
+        { name: '科幻末世', channel: 'male', categories: ['科幻末世'] },
+        { name: '悬疑灵异', channel: 'male', categories: ['悬疑脑洞', '悬疑灵异'] },
+        { name: '游戏衍生', channel: 'male', categories: ['游戏体育', '动漫衍生', '男频衍生'] },
+        // 女频（辅助）
+        { name: '古风言情', channel: 'female', categories: ['古风世情', '古言脑洞', '宫斗宅斗', '种田'] },
+        { name: '现代言情', channel: 'female', categories: ['现言脑洞', '豪门总裁', '职场婚恋', '青春甜宠'] },
+        { name: '幻想言情', channel: 'female', categories: ['玄幻言情', '科幻末世', '悬疑脑洞', '女频悬疑'] },
+        { name: '快穿衍生', channel: 'female', categories: ['快穿', '女频衍生'] },
+        { name: '年代民国', channel: 'female', categories: ['年代', '民国言情'] },
+        { name: '娱乐星光', channel: 'female', categories: ['星光璀璨'] },
     ];
 
     const els = {
@@ -47,9 +57,20 @@ document.addEventListener('DOMContentLoaded', () => {
             latestData = latestAll;
             marketSummaryData = marketSummary;
 
-            categories = latestIndex && latestIndex.types
-                ? latestIndex.types.filter(item => item.type !== 'all').map(item => item.type)
+            const allCats = latestIndex && latestIndex.types
+                ? latestIndex.types
+                    .filter(item => item.type !== 'all')
+                    .map(item => ({
+                        name: item.type,
+                        channel: item.channel || 'male',
+                        key: item.key || `${item.channel || 'male'}:${item.type}`,
+                    }))
                 : await loadCategoriesFallback();
+
+            // 风向标默认男频；若无男频数据则退回全部
+            const maleCats = allCats.filter(c => c.channel === 'male');
+            categories = maleCats.length ? maleCats : allCats;
+            currentChannel = maleCats.length ? 'male' : (allCats[0]?.channel || 'male');
 
             const dates = (dateIndex.dates || []).slice().sort();
             const trendDates = dates.slice(1);
@@ -66,7 +87,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            selectedCategory = getInitialCategory();
+            const initial = getInitialCategory();
+            selectedCategory = initial.name;
+            selectedCategoryKey = initial.key;
             renderCategoryButtons();
             bindEvents();
             render();
@@ -78,7 +101,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function loadCategoriesFallback() {
         const latest = await fetchJson(`data/latest_ranks.json?${cacheBuster}`);
-        return (latest.categories || []).map(cat => cat.name);
+        return (latest.categories || []).map(cat => ({
+            name: cat.name,
+            channel: cat.channel || 'male',
+            key: cat.key || `${cat.channel || 'male'}:${cat.name}`,
+        }));
+    }
+
+    function resolveTrend(trends, cat) {
+        if (!trends || !cat) return null;
+        return trends[cat.key] || trends[cat.name] || null;
     }
 
     function fetchJson(url) {
@@ -102,13 +134,14 @@ document.addEventListener('DOMContentLoaded', () => {
     function getInitialCategory() {
         const params = new URLSearchParams(window.location.search);
         const type = params.get('type');
-        return categories.includes(type) ? type : categories[0];
+        const found = categories.find(c => c.name === type || c.key === type);
+        return found || categories[0];
     }
 
     function renderCategoryButtons() {
-        categoryButtons.innerHTML = categories.map(name => `
-            <button class="category-chip${name === selectedCategory ? ' active' : ''}" type="button" data-type="${escapeAttr(name)}">
-                ${escapeHtml(name)}
+        categoryButtons.innerHTML = categories.map(cat => `
+            <button class="category-chip${cat.name === selectedCategory ? ' active' : ''}" type="button" data-type="${escapeAttr(cat.name)}" data-key="${escapeAttr(cat.key)}">
+                ${escapeHtml(cat.name)}
             </button>
         `).join('');
 
@@ -118,8 +151,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function selectCategory(type) {
-        if (!categories.includes(type)) return;
-        selectedCategory = type;
+        const cat = categories.find(c => c.name === type || c.key === type);
+        if (!cat) return;
+        selectedCategory = cat.name;
+        selectedCategoryKey = cat.key;
         const url = new URL(window.location.href);
         url.searchParams.set('type', selectedCategory);
         history.replaceState(null, '', url);
@@ -128,11 +163,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function render() {
+        const selected = categories.find(c => c.key === selectedCategoryKey)
+            || categories.find(c => c.name === selectedCategory)
+            || categories[0];
+        selectedCategory = selected.name;
+        selectedCategoryKey = selected.key;
+
         const rows = getWindowRows()
             .map(row => ({
                 date: row.date,
                 prevDate: row.prevDate,
-                trend: row.trends[selectedCategory] || null,
+                trend: resolveTrend(row.trends, selected),
             }))
             .filter(row => row.trend);
 
@@ -141,7 +182,8 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        subtitle.textContent = `${selectedCategory} · ${rows[0].date} 至 ${rows[rows.length - 1].date} · ${rows.length} 个观察日`;
+        const chLabel = currentChannel === 'female' ? '女频' : '男频';
+        subtitle.textContent = `${chLabel} · ${selectedCategory} · ${rows[0].date} 至 ${rows[rows.length - 1].date} · ${rows.length} 个观察日`;
 
         renderMarketBoard(getWindowRows());
         renderList(els.reads, collectReads(rows));
@@ -234,46 +276,51 @@ document.addEventListener('DOMContentLoaded', () => {
     function collectHotGenres(rowsWindow) {
         const hotTypes = collectHotTypes(rowsWindow);
         const hotTypeMap = new Map(hotTypes.map(item => [item.name, item]));
+        const catNames = new Set(categories.map(c => c.name));
+        const channel = currentChannel;
 
-        return genreGroups.map(group => {
-            const matched = group.categories
-                .filter(name => categories.includes(name))
-                .map(name => hotTypeMap.get(name) || {
-                    name,
-                    score: 0,
-                    newCount: 0,
-                    droppedCount: 0,
-                    readCount: 0,
-                    readGrowthTotal: 0,
-                    activeDays: 0,
-                });
+        return genreGroups
+            .filter(group => (group.channel || 'male') === channel)
+            .map(group => {
+                const matched = group.categories
+                    .filter(name => catNames.has(name))
+                    .map(name => hotTypeMap.get(name) || {
+                        name,
+                        score: 0,
+                        newCount: 0,
+                        droppedCount: 0,
+                        readCount: 0,
+                        readGrowthTotal: 0,
+                        activeDays: 0,
+                    });
 
-            const score = matched.reduce((sum, item) => sum + item.score, 0);
-            const lead = matched.slice().sort((a, b) => b.score - a.score)[0];
-            return {
-                name: group.name,
-                score,
-                newCount: matched.reduce((sum, item) => sum + item.newCount, 0),
-                droppedCount: matched.reduce((sum, item) => sum + item.droppedCount, 0),
-                readCount: matched.reduce((sum, item) => sum + item.readCount, 0),
-                readGrowthTotal: matched.reduce((sum, item) => sum + item.readGrowthTotal, 0),
-                activeDays: matched.reduce((sum, item) => sum + item.activeDays, 0),
-                leadCategory: lead ? lead.name : group.categories[0],
-                categoryText: matched.map(item => item.name).join(' / '),
-            };
-        })
+                const score = matched.reduce((sum, item) => sum + item.score, 0);
+                const lead = matched.slice().sort((a, b) => b.score - a.score)[0];
+                return {
+                    name: group.name,
+                    score,
+                    newCount: matched.reduce((sum, item) => sum + item.newCount, 0),
+                    droppedCount: matched.reduce((sum, item) => sum + item.droppedCount, 0),
+                    readCount: matched.reduce((sum, item) => sum + item.readCount, 0),
+                    readGrowthTotal: matched.reduce((sum, item) => sum + item.readGrowthTotal, 0),
+                    activeDays: matched.reduce((sum, item) => sum + item.activeDays, 0),
+                    leadCategory: lead ? lead.name : group.categories[0],
+                    categoryText: matched.map(item => item.name).join(' / '),
+                };
+            })
             .filter(item => item.score > 0 && item.leadCategory)
             .sort((a, b) => b.score - a.score);
     }
 
     function collectHotTypes(rowsWindow) {
-        return categories.map(name => {
+        return categories.map(cat => {
             const rows = rowsWindow
-                .map(row => ({ trend: row.trends[name] || null }))
+                .map(row => ({ trend: resolveTrend(row.trends, cat) }))
                 .filter(row => row.trend);
             const totals = summarizeRows(rows);
             return {
-                name,
+                name: cat.name,
+                key: cat.key,
                 score: totals.readGrowthTotal,
                 newCount: totals.newCount,
                 droppedCount: totals.droppedCount,
@@ -288,24 +335,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function collectHotThemes(rowsWindow) {
         const keywords = [
-            '重生', '穿书', '快穿', '系统', '空间', '团宠', '萌宝', '幼崽', '女配', '炮灰',
-            '反派', '权臣', '宅斗', '宫斗', '和离', '替嫁', '逃荒', '种田', '美食', '经商',
-            '年代', '七零', '八零', '军婚', '豪门', '总裁', '真假千金', '先婚后爱', '追妻',
-            '甜宠', '双洁', '强制爱', '无CP', '末世', '废土', '天灾', '囤货', '异能',
-            '国运', '星际', '修仙', '玄学', '无限流', '悬疑', '直播', '综艺', '娱乐圈',
-            '校园', '暗恋', '青梅竹马', '民国', '兽世', '远古', '基建'
+            '系统', '重生', '穿越', '无敌', '签到', '暴兵', '基建', '种田', '赘婿',
+            '战神', '兵王', '神医', '鉴宝', '修仙', '仙侠', '玄幻', '高武', '灵气复苏',
+            '末日', '末世', '丧尸', '囤货', '异能', '星际', '机甲', '科幻', '赛博',
+            '历史', '三国', '明朝', '抗日', '谍战', '无限流', '诸天', '综武', '同人',
+            '游戏', '电竞', '直播', '悬疑', '灵异', '克苏鲁', '脑洞', '无CP',
+            '穿书', '快穿', '空间', '团宠', '豪门', '总裁', '甜宠', '年代', '民国',
         ];
         const scoreMap = new Map(keywords.map(name => [name, { name, count: 0, categories: new Set() }]));
 
         const latestBookMap = buildLatestBookMap();
 
         rowsWindow.forEach(row => {
-            categories.forEach(catName => {
-                const trend = row.trends[catName];
+            categories.forEach(cat => {
+                const trend = resolveTrend(row.trends, cat);
                 if (!trend) return;
                 (trend.new_books || []).forEach(title => {
                     const book = latestBookMap.get(title) || {};
-                    addThemeHits(scoreMap, keywords, `${title} ${book.intro || ''}`, catName, 1);
+                    addThemeHits(scoreMap, keywords, `${title} ${book.intro || ''}`, cat.name, 1);
                 });
             });
         });

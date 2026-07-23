@@ -23,7 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const dateIndex = await fetchJson(`data/dates.json?${cacheBuster}`);
             const dates = (dateIndex.dates || []).slice().sort().slice(-maxDays);
             const snapshots = await Promise.all(
-                dates.map(date => fetchJson(`${snapshotUrl(date)}?${cacheBuster}`).catch(() => null))
+                dates.map(date => {
+                    const compact = date.replace(/-/g, '');
+                    return fetchJson(`data/fanqie_ranks_${compact}.json?${cacheBuster}`)
+                        .catch(() => fetchJson(`data/fanqie_female_new_ranks_${compact}.json?${cacheBuster}`))
+                        .catch(() => null);
+                })
             );
             const records = collectBookRecords(bookId, bookTitle, dates, snapshots);
 
@@ -40,7 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function snapshotUrl(date) {
-        return `data/fanqie_female_new_ranks_${date.replace(/-/g, '')}.json`;
+        // 新格式优先；历史女频文件由 fetch 侧做兼容
+        return `data/fanqie_ranks_${date.replace(/-/g, '')}.json`;
     }
 
     function fetchJson(url) {

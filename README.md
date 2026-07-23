@@ -1,8 +1,8 @@
-# 🏆 番茄风向标 · Fanqie Rank Tracker
+# 🍅 番茄风向标 · Fanqie Trend
 
-[![English](https://img.shields.io/badge/lang-English-blue)](README_EN.md)
+> **男频为主，女频辅助** — 每日自动追踪番茄小说新书榜，结合 AI 生成趋势分析，部署为在线看板。
 
-> 👗 专注于**番茄小说女频新书榜**，每日自动追踪排行数据并结合 AI 生成趋势分析，部署为精美的在线看板。
+本仓库基于社区项目改造，**已独立运营、不再同步上游**。数据格式、爬取频道与看板结构均为本 fork 定制版。
 
 ---
 
@@ -10,114 +10,84 @@
 
 | 功能 | 说明 |
 |------|------|
-| 🕷️ 自动爬取 | 每日定时抓取番茄女性频道各个分类的新书榜 Top 30 |
-| 📊 趋势对比 | 自动对比相邻两天数据：新上榜 / 掉榜 / 排名变化 / 阅读量增长 |
-| 🤖 AI 风向分析 | 接入 OpenAI 兼容 API，按分类生成市场趋势速评 |
-| 🧭 类型风向标 | 独立趋势页聚合多日数据，用 AI 总结古风言情等综合赛道、具体热门分类和高频题材；未配置 API 时自动规则兜底 |
-| 🖥️ 精美看板 | 暗色编辑风格仪表盘，带打字机动画和瀑布流书籍卡片 |
-| 📱 移动适配 | 完整的移动端适配，侧边栏抽屉式菜单 |
-| 🔌 数据接口 | 生成静态 `lastest` JSON 接口，可按类型读取最新数据 |
-| ⚡ 全自动化 | GitHub Actions + GitHub Pages，零服务器运维 |
+| 🕷️ 双频道爬取 | **男频**全量 Top 30；**女频**辅助 Top 15 |
+| 📊 趋势对比 | 新上榜 / 掉榜 / 排名变化 / 阅读量增长 |
+| 🤖 AI 风向分析 | OpenAI 兼容 API；未配置时规则兜底 |
+| 🧭 类型风向标 | 多日聚合，男频赛道优先 |
+| 🖥️ 看板 | 侧边栏可切换男频 / 女频 |
+| ⚡ 自动化 | GitHub Actions + GitHub Pages |
+
+看板地址：https://6leokk.github.io/fanqietrend-main/
 
 ---
 
-## 🚀 食用指南
+## 🚀 使用说明
 
-### 前置条件
+### 1. Fork / 使用本仓库
 
-- **Python 3.9+**
-- **Git**
-- 一个 GitHub 账号
-- （可选）一个 OpenAI 兼容 API 的密钥，用于 AI 分析
+本仓库已配置好 Actions 与 Pages。若重新部署到自己的账号：
 
-### 第一步：Fork 仓库
+1. Fork 本仓库
+2. 开启 **Settings → Pages → Source: GitHub Actions**
+3. 可选：配置 AI Secrets（`API_BASE_URL` / `API_KEY` / `API_MODEL`）
+4. **Actions → Daily Fanqie Rank Scraper → Run workflow**
 
-点击 GitHub 页面右上角的 **Fork** 按钮，将项目 Fork 到你自己的账号下。
+### 2. 自动更新
 
-### 第二步：开启 GitHub Pages
+每天 **UTC 00:17（北京时间 08:17）** 自动爬取并部署。
 
-1. 进入你 Fork 后的仓库 → **Settings** → **Pages**
-2. Source 选择 **Deploy from a branch**
-3. Branch 选择 `main`，目录选择 `/ (root)`
-4. 点击 **Save**
+### 3. 数据格式
 
-稍等几分钟，你的看板就会上线：`https://<你的用户名>.github.io/FanqieRankTracker/`
+每日快照：`data/fanqie_ranks_YYYYMMDD.json`
 
-### 第三步：配置 Secrets（可选，开启 AI 分析）
-
-进入仓库 → **Settings** → **Secrets and variables** → **Actions** → **New repository secret**，添加以下三个 Secret：
-
-| Secret 名称 | 说明 | 示例 |
-|---|---|---|
-| `API_BASE_URL` | OpenAI 兼容 API 的地址 | `https://api.openai.com/v1` |
-| `API_KEY` | API 密钥 | `sk-xxxxxxxxxxxxx` |
-| `API_MODEL` | 模型名称 | `gpt-4o-mini` |
-
-> **💡 提示：** 任何 OpenAI 兼容接口均可使用（如 Moonshot / DeepSeek / 自建服务等）。如果不配置这三个 Secret，系统将自动使用基于规则的摘要替代 AI 分析，**不影响核心功能**。
-
-### 第四步：手动触发首次运行
-
-1. 进入仓库 → **Actions** → 左侧选择 **Daily Fanqie Rank Scraper**
-2. 点击右上角 **Run workflow** → **Run workflow**
-3. 等待 Workflow 运行完成（约 3–5 分钟）
-
-运行成功后，`data/` 目录下会自动生成数据文件，打开 GitHub Pages 链接即可看到看板。
-
-### 第五步：坐等自动更新
-
-GitHub Actions 已配置为 **每天 UTC 00:00（北京时间 08:00）** 自动运行。之后无需任何手动操作，数据和看板会每天自动更新。
-
-看板右上角的 **风向标** 可进入 `trend.html`，先查看当下火热综合赛道（如古风言情）、具体热门分类和高频题材，再按具体类型查看近 7 / 14 / 30 日或全部周期的趋势分析。全站热点会优先使用 AI 总结，未配置 API 或生成失败时使用规则统计文案兜底。
-
----
-
-## 🔌 最新数据接口
-
-构建脚本会同步生成 GitHub Pages 可直接访问的静态 JSON 接口：
-
-| 类型 | 路径 | 说明 |
-|---|---|---|
-| 类型索引 | `api/lastest.json` | 返回所有可用类型及对应 URL |
-| 全量数据 | `api/lastest/all.json` | `type=all`，返回全部分类、趋势和书籍 |
-| 单类型数据 | `api/lastest/<类型>.json` | 返回指定类型的数据，例如 `api/lastest/古风世情.json` |
-
-示例：
-
-```bash
-curl https://<你的用户名>.github.io/FanqieRankTracker/api/lastest/all.json
-curl https://<你的用户名>.github.io/FanqieRankTracker/api/lastest/古风世情.json
+```json
+{
+  "date": "2026-07-23",
+  "primary_channel": "male",
+  "categories": [
+    {
+      "name": "都市日常",
+      "channel": "male",
+      "key": "male:都市日常",
+      "books": [ ... ]
+    },
+    {
+      "name": "古风世情",
+      "channel": "female",
+      "key": "female:古风世情",
+      "books": [ ... ]
+    }
+  ]
+}
 ```
+
+- 男频入口：`https://fanqienovel.com/rank/1_1_*`
+- 女频入口：`https://fanqienovel.com/rank/0_1_*`
+
+---
+
+## 🔌 数据接口
+
+| 路径 | 说明 |
+|------|------|
+| `api/lastest.json` | 类型索引（含 channel） |
+| `api/lastest/all.json` | 全量 |
+| `api/lastest/<channel>_<类型>.json` | 单类型 |
 
 ---
 
 ## 🔧 本地开发
 
 ```bash
-# 1. 克隆仓库
-git clone https://github.com/<你的用户名>/FanqieRankTracker.git
-cd FanqieRankTracker
-
-# 2. 创建虚拟环境（推荐）
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-
-# 3. 安装依赖
+git clone https://github.com/6Leokk/fanqietrend-main.git
+cd fanqietrend-main
+python -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
 playwright install chromium
 
-# 4. 运行爬虫（每个分类抓取 Top 30）
-python scrape_fanqie_ranks.py
-
-# 5. 构建看板数据（可选，带 AI 分析需设置环境变量）
-pip install openai
-export API_BASE_URL="https://your-api-endpoint/v1"
-export API_KEY="your-api-key"
-export API_MODEL="your-model-name"
-python scripts/build_latest.py
-
-# 6. 本地预览前端
-python -m http.server 8000
-# 打开 http://localhost:8000
+python scrape_fanqie_ranks.py          # 爬取（男频优先）
+python scripts/build_latest.py         # 构建看板数据
+python -m http.server 8000             # 预览
 ```
 
 ---
@@ -125,86 +95,34 @@ python -m http.server 8000
 ## 📁 项目结构
 
 ```
-FanqieRankTracker/
+fanqietrend-main/
 ├── .github/workflows/
-│   └── scrape.yml              # GitHub Actions 自动化工作流
-├── css/
-│   └── style.css               # 暗色编辑风格主题样式
-├── js/
-│   └── app.js                  # 前端渲染逻辑（瀑布流 + 打字机动画）
-├── scripts/
-│   └── build_latest.py         # 趋势对比 + AI 分析构建脚本
+│   ├── scrape.yml              # 每日爬取 + 部署
+│   ├── force_update.yml        # 强制重跑
+│   └── pages.yml               # Pages 部署
+├── css/  js/                   # 前端
+├── scripts/build_latest.py     # 趋势 + AI + API
 ├── data/
-│   ├── fanqie_female_new_ranks_YYYYMMDD.json  # 每日原始快照
-│   ├── latest_ranks.json       # 最新聚合数据（看板数据源）
-│   ├── market_summary.json     # 全站热点 AI/规则总结
+│   ├── fanqie_ranks_YYYYMMDD.json
+│   ├── latest_ranks.json
+│   ├── market_summary.json
 │   └── trends/
-│       └── YYYY-MM-DD.json     # 趋势归档
-├── api/
-│   └── lastest/                # 最新数据静态接口（all + 按类型拆分）
-├── index.html                  # 仪表盘入口页
-├── trend.html                  # 类型风向标趋势分析页
-├── scrape_fanqie_ranks.py      # 番茄小说爬虫（Playwright）
-├── requirements.txt            # Python 依赖
-└── README.md                   # 本文件
+├── api/lastest/                # 静态 JSON 接口
+├── scrape_fanqie_ranks.py
+├── index.html / trend.html / book.html
+└── README.md
 ```
 
 ---
 
-## ⚙️ 工作流程
+## 📝 说明
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                   GitHub Actions (每日 08:00)                │
-│                                                             │
-│  ┌──────────────┐    ┌──────────────┐    ┌──────────────┐  │
-│  │  Playwright   │───▶│  build_latest │───▶│  git commit  │  │
-│  │  爬取榜单数据  │    │  趋势对比      │    │  自动提交     │  │
-│  │              │    │  + AI 分析     │    │  到 main     │  │
-│  └──────────────┘    └──────────────┘    └──────────────┘  │
-│                                                             │
-└────────────────────────────┬────────────────────────────────┘
-                             │
-                             ▼
-                    GitHub Pages 自动部署
-                    用户访问在线看板 🌐
-```
+- **不配置 AI Secret 也能用**，会走规则摘要。
+- 男女频存在同名分类（如「科幻末世」），内部用 `channel:name` 作唯一键。
+- 历史 `fanqie_female_new_ranks_*` 为上游女频格式，本版已切换为 `fanqie_ranks_*`。
 
 ---
 
-## 📝 常见问题
+## License / 致谢
 
-<details>
-<summary><b>Q: Workflow 运行失败怎么办？</b></summary>
-
-检查 Actions 日志中的错误信息。常见原因：
-- 番茄小说页面结构变更 → 需要更新爬虫选择器
-- Playwright 安装超时 → 尝试重新运行
-
-</details>
-
-<details>
-<summary><b>Q: 不配置 AI Secret 也能用吗？</b></summary>
-
-可以！系统会自动 fallback 到基于规则的摘要（如"新增3本上榜；《XX》排名上升+5位"）。只是没有 AI 自然语言分析而已。
-
-</details>
-
-<details>
-<summary><b>Q: 可以换成男频或其他榜单吗？</b></summary>
-
-可以，修改 `scrape_fanqie_ranks.py` 中的 `init_url` 变量，将 URL 改为目标榜单的地址即可。
-
-</details>
-
----
-
-## 📜 License
-
-MIT
-
----
-
-<p align="center">
-  <sub>Made with ☕ and 🤖 — 数据每日自动更新，无需手动维护</sub>
-</p>
+改造自 [zhangsalute1/fanqietrend-main](https://github.com/zhangsalute1/fanqietrend-main) 社区项目。本仓库独立维护，功能与数据方向已分叉。

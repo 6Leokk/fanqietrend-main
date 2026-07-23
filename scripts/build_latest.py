@@ -1,8 +1,8 @@
 """
 构建 latest_ranks.json：
-1. 加载最近两天的 JSON 快照
-2. 按分类对比趋势（新上榜/掉榜/排名变化/阅读量变化）
-3. 可选调用 Gemini Flash 生成 AI 总结
+1. 加载最近两天的 JSON 快照（男频为主 + 女频辅助）
+2. 按 channel:name 对比趋势（新上榜/掉榜/排名变化/阅读量变化）
+3. 可选调用 OpenAI 兼容 API 生成 AI 总结
 4. 输出 latest_ranks.json + trends/YYYY-MM-DD.json
 """
 import os
@@ -12,6 +12,23 @@ import glob
 import sys
 import argparse
 from urllib.parse import quote
+
+SNAPSHOT_GLOB = "fanqie_ranks_*.json"
+SNAPSHOT_PREFIX = "fanqie_ranks_"
+# 兼容旧女频快照（只读，迁移期）
+LEGACY_SNAPSHOT_GLOB = "fanqie_female_new_ranks_*.json"
+
+
+def cat_key(channel: str, name: str) -> str:
+    """跨频道唯一分类键。"""
+    channel = channel or "male"
+    return f"{channel}:{name}"
+
+
+def ensure_cat_key(cat: dict) -> str:
+    if cat.get("key"):
+        return cat["key"]
+    return cat_key(cat.get("channel", "male"), cat.get("name", ""))
 
 
 def parse_reads(reads_str: str) -> float:
@@ -43,11 +60,13 @@ def load_snapshot(path: str) -> dict:
 def compare_categories(today_cats: list, prev_cats: list) -> dict:
     """
     对比两天的分类数据，返回每个分类的趋势信息。
-    key = 分类名, value = trend dict
+    key = channel:name（兼容旧数据仅用 name）
     """
-    # 构建 prev 的索引: cat_name -> {url: (rank, reads_str, title)}
+    # 构建 prev 的索引: cat_key -> {url: ...}
     prev_index = {}
     for cat in prev_cats:
+        key = ensure_cat_key(cat)
+        # 旧快照无 channel 时，同时用 name 兜底
         url_map = {}
         for i, book in enumerate(cat.get("books", [])):
             url_map[book["url"]] = {
@@ -56,12 +75,15 @@ def compare_categories(today_cats: list, prev_cats: list) -> dict:
                 "title": book.get("title", "未知"),
                 "intro": book.get("intro", "暂无简介"),
             }
-        prev_index[cat["name"]] = url_map
+        prev_index[key] = url_map
+        if key != cat.get("name"):
+            prev_index.setdefault(cat.get("name", ""), url_map)
 
     trends = {}
     for cat in today_cats:
         cat_name = cat["name"]
-        prev_urls = prev_index.get(cat_name, {})
+        key = ensure_cat_key(cat)
+        prev_urls = prev_index.get(key) or prev_index.get(cat_name, {})
         today_books = cat.get("books", [])
 
         new_books = []
@@ -87,7 +109,6 @@ def compare_categories(today_cats: list, prev_cats: list) -> dict:
                 elif rank_change < 0:
                     fallers.append({"title": title, "change": str(rank_change)})
 
-                # 阅读量变化
                 today_reads = parse_reads(book.get("reads", ""))
                 prev_reads = parse_reads(prev_info["reads"])
                 if today_reads > 0 and prev_reads > 0:
@@ -99,7 +120,6 @@ def compare_categories(today_cats: list, prev_cats: list) -> dict:
             else:
                 new_books.append(title)
 
-        # 掉出榜单的书（含简介以便 AI 分析题材）
         for url, info in prev_urls.items():
             if url not in today_urls:
                 dropped_books.append({
@@ -107,14 +127,15 @@ def compare_categories(today_cats: list, prev_cats: list) -> dict:
                     "intro": info.get("intro", "暂无简介")[:100],
                 })
 
-        # 排序：涨幅最大的在前
         risers.sort(key=lambda x: int(x["change"].replace("+", "")), reverse=True)
         fallers.sort(key=lambda x: int(x["change"]))
         reads_growth.sort(
             key=lambda x: parse_reads(x["growth"].replace("+", "")), reverse=True
         )
 
-        trends[cat_name] = {
+        trends[key] = {
+            "name": cat_name,
+            "channel": cat.get("channel", "male"),
             "new_count": len(new_books),
             "dropped_count": len(dropped_books),
             "new_books": new_books[:5],
@@ -122,7 +143,7 @@ def compare_categories(today_cats: list, prev_cats: list) -> dict:
             "top_risers": risers[:3],
             "top_fallers": fallers[:3],
             "reads_growth": reads_growth[:3],
-            "summary": "",  # AI 总结，由 generate_ai_summaries 填充
+            "summary": "",
         }
 
     return trends
@@ -221,23 +242,48 @@ BATCH_SIZE = 3  # 每批合并的分类数
 
 MARKET_PERIODS = [("7", 7), ("14", 14), ("30", 30), ("all", None)]
 
+# 男频综合赛道（主）+ 女频赛道（辅）
 GENRE_GROUPS = [
-    {"name": "古风言情", "categories": ["古风世情", "古言脑洞", "宫斗宅斗", "种田"]},
-    {"name": "现代言情", "categories": ["现言脑洞", "豪门总裁", "职场婚恋", "青春甜宠"]},
-    {"name": "幻想言情", "categories": ["玄幻言情", "科幻末世", "悬疑脑洞", "女频悬疑"]},
-    {"name": "快穿衍生", "categories": ["快穿", "女频衍生"]},
-    {"name": "年代民国", "categories": ["年代", "民国言情"]},
-    {"name": "娱乐星光", "categories": ["星光璀璨"]},
-    {"name": "游戏体育", "categories": ["游戏体育"]},
+    # —— 男频 ——
+    {"name": "东方玄幻", "channel": "male",
+     "categories": ["东方仙侠", "传统玄幻", "玄幻脑洞", "都市修真"]},
+    {"name": "西方奇幻", "channel": "male",
+     "categories": ["西方奇幻"]},
+    {"name": "都市高武", "channel": "male",
+     "categories": ["都市高武", "都市日常", "都市脑洞", "都市种田", "战神赘婿"]},
+    {"name": "历史抗战", "channel": "male",
+     "categories": ["历史古代", "历史脑洞", "抗战谍战"]},
+    {"name": "科幻末世", "channel": "male",
+     "categories": ["科幻末世"]},
+    {"name": "悬疑灵异", "channel": "male",
+     "categories": ["悬疑脑洞", "悬疑灵异"]},
+    {"name": "游戏衍生", "channel": "male",
+     "categories": ["游戏体育", "动漫衍生", "男频衍生"]},
+    # —— 女频（辅助）——
+    {"name": "古风言情", "channel": "female",
+     "categories": ["古风世情", "古言脑洞", "宫斗宅斗", "种田"]},
+    {"name": "现代言情", "channel": "female",
+     "categories": ["现言脑洞", "豪门总裁", "职场婚恋", "青春甜宠"]},
+    {"name": "幻想言情", "channel": "female",
+     "categories": ["玄幻言情", "科幻末世", "悬疑脑洞", "女频悬疑"]},
+    {"name": "快穿衍生", "channel": "female",
+     "categories": ["快穿", "女频衍生"]},
+    {"name": "年代民国", "channel": "female",
+     "categories": ["年代", "民国言情"]},
+    {"name": "娱乐星光", "channel": "female",
+     "categories": ["星光璀璨"]},
 ]
 
 MARKET_KEYWORDS = [
-    "重生", "穿书", "快穿", "系统", "空间", "团宠", "萌宝", "幼崽", "女配", "炮灰",
-    "反派", "权臣", "宅斗", "宫斗", "和离", "替嫁", "逃荒", "种田", "美食", "经商",
-    "年代", "七零", "八零", "军婚", "豪门", "总裁", "真假千金", "先婚后爱", "追妻",
-    "甜宠", "双洁", "强制爱", "无CP", "末世", "废土", "天灾", "囤货", "异能",
-    "国运", "星际", "修仙", "玄学", "无限流", "悬疑", "直播", "综艺", "娱乐圈",
-    "校园", "暗恋", "青梅竹马", "民国", "兽世", "远古", "基建",
+    # 男频高频
+    "系统", "重生", "穿越", "无敌", "签到", "暴兵", "基建", "种田", "赘婿",
+    "战神", "兵王", "神医", "鉴宝", "修仙", "仙侠", "玄幻", "高武", "灵气复苏",
+    "末日", "末世", "丧尸", "囤货", "异能", "星际", "机甲", "科幻", "赛博",
+    "历史", "三国", "明朝", "抗日", "谍战", "无限流", "诸天", "综武", "同人",
+    "游戏", "电竞", "直播", "悬疑", "灵异", "克苏鲁", "脑洞", "无CP",
+    # 女频辅助
+    "穿书", "快穿", "空间", "团宠", "萌宝", "女配", "炮灰", "宅斗", "宫斗",
+    "豪门", "总裁", "甜宠", "先婚后爱", "年代", "民国", "娱乐圈",
 ]
 
 
@@ -401,7 +447,9 @@ def build_lastest_api(output: dict, base_dir: str):
     used_filenames = {"all"}
     for cat in categories:
         type_name = cat.get("name", "")
-        filename = api_type_filename(type_name)
+        channel = cat.get("channel", "male")
+        # 文件名带频道前缀，避免男女同名分类冲突
+        filename = api_type_filename(f"{channel}_{type_name}")
         base_filename = filename
         suffix = 2
         while filename in used_filenames:
@@ -411,6 +459,8 @@ def build_lastest_api(output: dict, base_dir: str):
 
         payload = {
             "type": type_name,
+            "channel": channel,
+            "key": ensure_cat_key(cat),
             "date": date,
             "prev_date": prev_date,
             "category": cat,
@@ -421,6 +471,8 @@ def build_lastest_api(output: dict, base_dir: str):
         url = f"api/lastest/{quote(filename)}.json"
         types.append({
             "type": type_name,
+            "channel": channel,
+            "key": ensure_cat_key(cat),
             "url": url,
             "book_count": len(cat.get("books", [])),
         })
@@ -428,6 +480,7 @@ def build_lastest_api(output: dict, base_dir: str):
     index_payload = {
         "date": date,
         "prev_date": prev_date,
+        "primary_channel": output.get("primary_channel", "male"),
         "types": types,
     }
     write_json(os.path.join(lastest_dir, "index.json"), index_payload)
@@ -506,21 +559,32 @@ def format_market_reads(value: float) -> str:
     return str(round(value))
 
 
-def collect_market_hot_types(categories: list, rows_window: list) -> list:
-    """统计具体分类热度。"""
+def collect_market_hot_types(cat_entries: list, rows_window: list) -> list:
+    """统计具体分类热度。cat_entries: [{key, name, channel}, ...]。"""
     result = []
-    for name in categories:
+    for entry in cat_entries:
+        key = entry["key"]
         rows = [
-            {"trend": row.get("trends", {}).get(name)}
+            {"trend": row.get("trends", {}).get(key)}
             for row in rows_window
-            if row.get("trends", {}).get(name)
+            if row.get("trends", {}).get(key)
         ]
+        # 兼容旧 trends 用纯 name 做 key
+        if not rows:
+            name = entry["name"]
+            rows = [
+                {"trend": row.get("trends", {}).get(name)}
+                for row in rows_window
+                if row.get("trends", {}).get(name)
+            ]
         totals = summarize_market_rows(rows)
         score = market_score(totals)
         if score <= 0:
             continue
         result.append({
-            "name": name,
+            "key": key,
+            "name": entry["name"],
+            "channel": entry.get("channel", "male"),
             "score": score,
             "new_count": totals["new_count"],
             "dropped_count": totals["dropped_count"],
@@ -535,24 +599,39 @@ def collect_market_hot_types(categories: list, rows_window: list) -> list:
     )
 
 
-def collect_market_hot_genres(categories: list, hot_types: list) -> list:
-    """按综合赛道聚合具体分类热度。"""
-    type_map = {item["name"]: item for item in hot_types}
+def collect_market_hot_genres(cat_entries: list, hot_types: list) -> list:
+    """按综合赛道聚合具体分类热度（优先男频赛道）。"""
+    type_by_key = {item["key"]: item for item in hot_types if item.get("key")}
+    type_by_name_channel = {
+        (item.get("channel", "male"), item["name"]): item for item in hot_types
+    }
+    name_set_by_channel = {}
+    for e in cat_entries:
+        name_set_by_channel.setdefault(e.get("channel", "male"), set()).add(e["name"])
+
     genres = []
     for group in GENRE_GROUPS:
+        channel = group.get("channel", "male")
+        available = name_set_by_channel.get(channel, set())
         matched = []
         for name in group["categories"]:
-            if name not in categories:
+            if name not in available:
                 continue
-            matched.append(type_map.get(name, {
-                "name": name,
-                "score": 0,
-                "new_count": 0,
-                "dropped_count": 0,
-                "read_count": 0,
-                "read_growth_total": 0,
-                "active_days": 0,
-            }))
+            item = type_by_name_channel.get((channel, name))
+            if not item:
+                key = cat_key(channel, name)
+                item = type_by_key.get(key, {
+                    "key": key,
+                    "name": name,
+                    "channel": channel,
+                    "score": 0,
+                    "new_count": 0,
+                    "dropped_count": 0,
+                    "read_count": 0,
+                    "read_growth_total": 0,
+                    "active_days": 0,
+                })
+            matched.append(item)
         if not matched:
             continue
         read_growth_total = sum(item["read_growth_total"] for item in matched)
@@ -565,6 +644,7 @@ def collect_market_hot_genres(categories: list, hot_types: list) -> list:
         )[0]
         genres.append({
             "name": group["name"],
+            "channel": channel,
             "score": round(read_growth_total),
             "new_count": sum(item["new_count"] for item in matched),
             "dropped_count": sum(item["dropped_count"] for item in matched),
@@ -595,8 +675,8 @@ def add_theme_hits(score_map: dict, text: str, category_name: str, weight: int):
 
 
 def collect_market_hot_themes(output: dict, rows_window: list,
-                              categories: list) -> list:
-    """只统计近期新上榜作品中的高频题材词。"""
+                              cat_entries: list) -> list:
+    """只统计近期新上榜作品中的高频题材词。优先男频，女频权重减半。"""
     score_map = {
         name: {"name": name, "count": 0, "categories": set()}
         for name in MARKET_KEYWORDS
@@ -609,17 +689,24 @@ def collect_market_hot_themes(output: dict, rows_window: list,
                 latest_book_map[title] = book
 
     for row in rows_window:
-        for cat_name in categories:
-            trend = row.get("trends", {}).get(cat_name)
+        for entry in cat_entries:
+            key = entry["key"]
+            trend = row.get("trends", {}).get(key) or row.get("trends", {}).get(entry["name"])
             if not trend:
+                continue
+            weight = 1 if entry.get("channel", "male") == "male" else 0  # 女频不计入全站题材
+            if weight <= 0:
+                # 女频辅助：降低权重但仍可见
+                weight = 0
+                # 跳过女频题材，保持全站热点以男频为主
                 continue
             for title in trend.get("new_books", []):
                 book = latest_book_map.get(title, {})
                 add_theme_hits(
                     score_map,
                     f"{title} {book.get('intro', '')}",
-                    cat_name,
-                    1
+                    entry["name"],
+                    weight
                 )
 
     themes = []
@@ -654,17 +741,37 @@ def build_rule_market_summary(period_label: str, hot_genres: list,
 
 
 def build_market_summary_payload(output: dict, trends_dir: str) -> dict:
-    """生成全站热点统计和规则兜底总结。"""
-    categories = [cat.get("name", "") for cat in output.get("categories", [])]
+    """生成全站热点统计和规则兜底总结（以男频为主）。"""
+    # 全站热点默认只看男频；女频数据仍在 categories 中可单独查看
+    male_cats = [
+        {
+            "key": ensure_cat_key(cat),
+            "name": cat.get("name", ""),
+            "channel": cat.get("channel", "male"),
+        }
+        for cat in output.get("categories", [])
+        if cat.get("channel", "male") == "male"
+    ]
+    # 若还没有 channel 字段（旧数据），全部当作可用
+    if not male_cats:
+        male_cats = [
+            {
+                "key": ensure_cat_key(cat),
+                "name": cat.get("name", ""),
+                "channel": cat.get("channel", "male"),
+            }
+            for cat in output.get("categories", [])
+        ]
+
     trend_rows = load_trend_rows(trends_dir)
     periods = {}
 
     for key, days in MARKET_PERIODS:
         rows_window = trend_rows if days is None else trend_rows[-days:]
         period_label = "全部样本" if days is None else f"近 {days} 日"
-        hot_types = collect_market_hot_types(categories, rows_window)
-        hot_genres = collect_market_hot_genres(categories, hot_types)
-        hot_themes = collect_market_hot_themes(output, rows_window, categories)
+        hot_types = collect_market_hot_types(male_cats, rows_window)
+        hot_genres = collect_market_hot_genres(male_cats, hot_types)
+        hot_themes = collect_market_hot_themes(output, rows_window, male_cats)
         fallback_summary = build_rule_market_summary(
             period_label, hot_genres, hot_types, hot_themes
         )
@@ -681,6 +788,7 @@ def build_market_summary_payload(output: dict, trends_dir: str) -> dict:
     return {
         "date": output.get("date", ""),
         "prev_date": output.get("prev_date", ""),
+        "primary_channel": "male",
         "periods": periods,
     }
 
@@ -711,7 +819,7 @@ def build_market_ai_prompt(payload: dict) -> str:
             f"- 规则兜底: {data['fallback_summary']}"
         )
 
-    return f"""你是一位网文市场编辑，请根据番茄女频新书榜的统计结果，为每个周期生成一段全站热点判断。
+    return f"""你是一位网文市场编辑，请根据番茄男频新书榜的统计结果，为每个周期生成一段全站热点判断。
 
 {chr(10).join(sections)}
 
@@ -814,17 +922,27 @@ def generate_ai_summaries(categories: list, trends: dict,
 
     for cat in categories:
         cat_name = cat["name"]
-        if cat_name not in trends:
+        key = ensure_cat_key(cat)
+        if key not in trends and cat_name not in trends:
             continue
+        trend_ref = trends.get(key) or trends.get(cat_name)
+        if not trend_ref:
+            continue
+        # 统一写回 key
+        if key not in trends:
+            trends[key] = trend_ref
 
         if not force:
-            existing_summary = existing_trends.get(cat_name, {}).get("summary", "")
+            existing_summary = (
+                existing_trends.get(key, {}).get("summary", "")
+                or existing_trends.get(cat_name, {}).get("summary", "")
+            )
             if existing_summary and not is_rule_summary(existing_summary):
-                trends[cat_name]["summary"] = existing_summary
+                trends[key]["summary"] = existing_summary
                 skipped += 1
                 continue
 
-        pending.append((cat_name, cat, trends[cat_name]))
+        pending.append((cat_name, cat, trends[key]))
 
     if skipped > 0:
         print(f"  ⏭️  跳过 {skipped} 个已有 AI 总结的分类")
@@ -869,10 +987,13 @@ def generate_ai_summaries(categories: list, trends: dict,
 
                 if parsed:
                     for name, summary in parsed.items():
-                        trends[name]["summary"] = summary
-                        print(f"    ✅ {name}")
+                        # 按显示名回写到对应 trend（可能多个频道同名，取本批匹配项）
+                        matched = [b for b in batch if b[0] == name]
+                        for m_name, m_cat, m_trend in matched:
+                            m_key = ensure_cat_key(m_cat)
+                            trends[m_key]["summary"] = summary
+                            print(f"    ✅ {m_cat.get('channel', '')}/{name}")
 
-                    # 未解析出的分类加入失败队列
                     for name in batch_names:
                         if name not in parsed:
                             print(f"    ⚠️  未解析到: {name}（将单独重试）")
@@ -904,6 +1025,7 @@ def generate_ai_summaries(categories: list, trends: dict,
     if failed_cats:
         print(f"\n  🔄 逐个重试 {len(failed_cats)} 个失败分类...")
         for cat_name, cat, trend in failed_cats:
+            key = ensure_cat_key(cat)
             prompt = build_ai_prompt(cat_name, cat, trend)
             max_retries = 3
             success = False
@@ -918,8 +1040,8 @@ def generate_ai_summaries(categories: list, trends: dict,
                     content = response.choices[0].message.content
                     if not content or not content.strip():
                         raise ValueError("API 返回空内容")
-                    trends[cat_name]["summary"] = content.strip()
-                    print(f"    ✅ {cat_name}")
+                    trends[key]["summary"] = content.strip()
+                    print(f"    ✅ {cat.get('channel', '')}/{cat_name}")
                     _save_trends_incremental(
                         trend_path, trend_date, prev_date, trends
                     )
@@ -933,12 +1055,15 @@ def generate_ai_summaries(categories: list, trends: dict,
 
             if not success:
                 print(f"    ❌ {cat_name} 最终失败")
-                old = existing_trends.get(cat_name, {}).get("summary", "")
+                old = (
+                    existing_trends.get(key, {}).get("summary", "")
+                    or existing_trends.get(cat_name, {}).get("summary", "")
+                )
                 if old and not is_rule_summary(old):
-                    trends[cat_name]["summary"] = old
+                    trends[key]["summary"] = old
                     print(f"    ↩️  保留旧 AI 总结: {cat_name}")
                 else:
-                    trends[cat_name]["summary"] = generate_trend_summary_text(
+                    trends[key]["summary"] = generate_trend_summary_text(
                         cat_name, trend
                     )
 
@@ -958,26 +1083,27 @@ def main():
     trends_dir = os.path.join(data_dir, "trends")
     os.makedirs(trends_dir, exist_ok=True)
 
-    # 查找 JSON 快照文件
-    snapshots = sorted(
-        glob.glob(os.path.join(data_dir, "fanqie_female_new_ranks_*.json"))
-    )
+    # 查找 JSON 快照（新格式优先，兼容旧女频文件名）
+    snapshots = sorted(glob.glob(os.path.join(data_dir, SNAPSHOT_GLOB)))
+    if not snapshots:
+        snapshots = sorted(glob.glob(os.path.join(data_dir, LEGACY_SNAPSHOT_GLOB)))
 
     if not snapshots:
-        print("未找到任何 JSON 快照文件。请先运行迁移脚本或爬虫。")
+        print("未找到任何 JSON 快照文件。请先运行爬虫。")
         sys.exit(1)
 
     # 根据 --date 参数选择目标快照
     if args.date:
         target_date_compact = args.date.replace("-", "")
-        target_path = os.path.join(
-            data_dir, f"fanqie_female_new_ranks_{target_date_compact}.json"
-        )
-        if not os.path.exists(target_path):
-            print(f"❌ 未找到 {args.date} 的快照文件: {target_path}")
+        candidates = [
+            os.path.join(data_dir, f"{SNAPSHOT_PREFIX}{target_date_compact}.json"),
+            os.path.join(data_dir, f"fanqie_female_new_ranks_{target_date_compact}.json"),
+        ]
+        target_path = next((p for p in candidates if os.path.exists(p)), None)
+        if not target_path:
+            print(f"❌ 未找到 {args.date} 的快照文件")
             sys.exit(1)
         latest_path = target_path
-        # 找到该快照在列表中的位置，取前一个作为对比
         target_idx = snapshots.index(target_path) if target_path in snapshots else -1
     else:
         latest_path = snapshots[-1]
@@ -1021,7 +1147,9 @@ def main():
     else:
         print("仅有一天数据，无法生成趋势对比。")
         trends = {
-            cat["name"]: {
+            ensure_cat_key(cat): {
+                "name": cat.get("name", ""),
+                "channel": cat.get("channel", "male"),
                 "new_count": 0,
                 "dropped_count": 0,
                 "new_books": [],
@@ -1054,26 +1182,37 @@ def main():
     else:
         missing = [k for k, v in {"API_BASE_URL": api_base_url, "API_KEY": api_key, "API_MODEL": api_model}.items() if not v]
         print(f"\n未配置 AI 服务（缺少: {', '.join(missing)}），使用规则摘要替代。")
-        for cat_name, trend in trends.items():
-            # 保留已有 AI 总结
-            old = existing_trends.get(cat_name, {}).get("summary", "")
+        for key, trend in trends.items():
+            display_name = trend.get("name") or key.split(":", 1)[-1]
+            old = (
+                existing_trends.get(key, {}).get("summary", "")
+                or existing_trends.get(display_name, {}).get("summary", "")
+            )
             if old and not is_rule_summary(old):
                 trend["summary"] = old
             elif not trend.get("summary"):
-                trend["summary"] = generate_trend_summary_text(cat_name, trend)
+                trend["summary"] = generate_trend_summary_text(display_name, trend)
 
     # 组装输出
     output = {
         "date": latest_data["date"],
         "prev_date": prev_date,
+        "primary_channel": latest_data.get("primary_channel", "male"),
         "categories": [],
     }
 
     for cat in latest_data["categories"]:
         cat_name = cat["name"]
+        key = ensure_cat_key(cat)
+        channel = cat.get("channel", "male")
+        # 保证 key/channel 写回
+        if "channel" not in cat:
+            cat = {**cat, "channel": channel, "key": key}
         cat_output = {
             "name": cat_name,
-            "trend": trends.get(cat_name, {}),
+            "channel": channel,
+            "key": key,
+            "trend": trends.get(key) or trends.get(cat_name, {}),
             "books": cat.get("books", []),
         }
         output["categories"].append(cat_output)
@@ -1112,14 +1251,14 @@ def main():
     date_list = []
     for s in snapshots:
         fname = os.path.basename(s)
-        # fanqie_female_new_ranks_YYYYMMDD.json -> YYYY-MM-DD
+        # fanqie_ranks_YYYYMMDD.json / fanqie_female_new_ranks_YYYYMMDD.json
         m = re.search(r"(\d{4})(\d{2})(\d{2})", fname)
         if m:
             date_list.append(f"{m.group(1)}-{m.group(2)}-{m.group(3)}")
     dates_path = os.path.join(data_dir, "dates.json")
     with open(dates_path, "w", encoding="utf-8") as f:
-        json.dump({"dates": sorted(date_list)}, f, ensure_ascii=False, indent=2)
-    print(f"✅ 日期索引: {dates_path} ({len(date_list)} 个日期)")
+        json.dump({"dates": sorted(set(date_list))}, f, ensure_ascii=False, indent=2)
+    print(f"✅ 日期索引: {dates_path} ({len(set(date_list))} 个日期)")
 
 
 if __name__ == "__main__":

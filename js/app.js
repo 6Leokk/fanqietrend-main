@@ -18,9 +18,49 @@ document.addEventListener('DOMContentLoaded', () => {
     let availableDates = [];   // sorted list of "YYYY-MM-DD"
     let currentDateIndex = -1; // index into availableDates
     let currentCategory = null; // preserve selected category across date switches
+    let currentChannel = 'male'; // 男频为主，女频辅助
+    const channelPill = document.getElementById('channel-pill');
+    const channelSwitch = document.getElementById('channel-switch');
 
     // Cache-busting: 每10分钟一个新key，避免浏览器缓存旧JSON
     const cacheBuster = `v=${Math.floor(Date.now() / 600000)}`;
+
+    function channelLabel(ch) {
+        return ch === 'female' ? '女频' : '男频';
+    }
+
+    function categoriesForChannel(data, channel) {
+        const cats = (data && data.categories) || [];
+        const filtered = cats.filter(c => (c.channel || 'male') === channel);
+        // 旧数据无 channel 字段时，全部展示在当前频道
+        return filtered.length ? filtered : cats;
+    }
+
+    function setChannel(channel, { reselect = true } = {}) {
+        currentChannel = channel === 'female' ? 'female' : 'male';
+        if (channelSwitch) {
+            channelSwitch.querySelectorAll('.channel-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.channel === currentChannel);
+            });
+        }
+        if (channelPill) {
+            channelPill.textContent = channelLabel(currentChannel);
+            channelPill.classList.toggle('female', currentChannel === 'female');
+        }
+        if (!allData) return;
+        if (reselect) {
+            currentCategory = null;
+            applyData(allData);
+        } else {
+            renderCategories();
+        }
+    }
+
+    if (channelSwitch) {
+        channelSwitch.querySelectorAll('.channel-btn').forEach(btn => {
+            btn.addEventListener('click', () => setChannel(btn.dataset.channel));
+        });
+    }
 
     // ========== Copy Toast ==========
     const copyToast = document.createElement('div');
@@ -214,7 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function loadDateData(dateStr) {
-        // dateStr = "YYYY-MM-DD", file = fanqie_female_new_ranks_YYYYMMDD.json
+        // dateStr = "YYYY-MM-DD", file = fanqie_ranks_YYYYMMDD.json（兼容旧女频文件名）
         const fileDateStr = dateStr.replace(/-/g, '');
         const isLatest = currentDateIndex === availableDates.length - 1;
 
@@ -227,23 +267,36 @@ document.addEventListener('DOMContentLoaded', () => {
         // Show loading state
         waterfall.innerHTML = '<p style="color:var(--text-muted);padding:20px;">加载中...</p>';
 
-        const snapshotUrl = `data/fanqie_female_new_ranks_${fileDateStr}.json?${cacheBuster}`;
+        const primaryUrl = `data/fanqie_ranks_${fileDateStr}.json?${cacheBuster}`;
+        const legacyUrl = `data/fanqie_female_new_ranks_${fileDateStr}.json?${cacheBuster}`;
         const trendUrl = `data/trends/${dateStr}.json?${cacheBuster}`;
+
+        const loadSnapshot = fetch(primaryUrl)
+            .then(r => r.ok ? r.json() : Promise.reject('No primary'))
+            .catch(() => fetch(legacyUrl).then(r => r.ok ? r.json() : Promise.reject('No snapshot')));
 
         // Load snapshot + trends in parallel
         Promise.all([
-            fetch(snapshotUrl).then(r => r.ok ? r.json() : Promise.reject('No snapshot')),
+            loadSnapshot,
             fetch(trendUrl).then(r => r.ok ? r.json() : null).catch(() => null)
         ]).then(([snapshot, trendData]) => {
             // Build a data object in the same shape as latest_ranks.json
             const combined = {
                 date: snapshot.date,
                 prev_date: trendData ? trendData.prev_date : '',
-                categories: snapshot.categories.map(cat => ({
-                    name: cat.name,
-                    trend: trendData && trendData.trends ? (trendData.trends[cat.name] || {}) : {},
-                    books: cat.books || []
-                }))
+                primary_channel: snapshot.primary_channel || 'male',
+                categories: snapshot.categories.map(cat => {
+                    const channel = cat.channel || 'male';
+                    const key = cat.key || `${channel}:${cat.name}`;
+                    const trends = (trendData && trendData.trends) || {};
+                    return {
+                        name: cat.name,
+                        channel,
+                        key,
+                        trend: trends[key] || trends[cat.name] || {},
+                        books: cat.books || []
+                    };
+                })
             };
             allData = combined;
             applyData(combined);
@@ -289,30 +342,38 @@ document.addEventListener('DOMContentLoaded', () => {
         const prevInfo = data.prev_date ? ` (对比 ${data.prev_date})` : '';
         updateDate.textContent = `${data.date}${prevInfo}`;
         updateDateNav();
+        if (channelPill) {
+            channelPill.textContent = channelLabel(currentChannel);
+            channelPill.classList.toggle('female', currentChannel === 'female');
+        }
 
-        // Remember current category before re-rendering
+        const channelCats = categoriesForChannel(data, currentChannel);
         const savedCategory = currentCategory;
         renderCategories();
 
-        // Try to restore previously selected category, otherwise pick first
-        const categoryExists = savedCategory && data.categories.some(c => c.name === savedCategory);
+        const categoryExists = savedCategory && channelCats.some(c => c.name === savedCategory);
         if (categoryExists) {
             selectCategory(savedCategory);
-            // Also update sidebar active state
             document.querySelectorAll('#category-list li').forEach(el => {
                 el.classList.toggle('active', el.dataset.category === savedCategory);
             });
-        } else if (data.categories.length > 0) {
-            selectCategory(data.categories[0].name);
+        } else if (channelCats.length > 0) {
+            selectCategory(channelCats[0].name);
+        } else {
+            categoryTitle.textContent = '暂无分类';
+            waterfall.innerHTML = `<div class="empty-state"><p>📭 当前频道暂无数据</p></div>`;
+            if (aiContent) aiContent.textContent = '';
         }
     }
 
     // ========== Render sidebar categories ==========
     function renderCategories() {
         categoryList.innerHTML = '';
-        allData.categories.forEach((cat, i) => {
+        const channelCats = categoriesForChannel(allData, currentChannel);
+        channelCats.forEach((cat, i) => {
             const li = document.createElement('li');
             li.dataset.category = cat.name;
+            li.dataset.channel = cat.channel || currentChannel;
 
             const nameSpan = document.createElement('span');
             nameSpan.textContent = cat.name;
@@ -349,7 +410,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function selectCategory(categoryName) {
         currentCategory = categoryName; // persist selection
         categoryTitle.textContent = categoryName;
-        const cat = allData.categories.find(c => c.name === categoryName);
+        const channelCats = categoriesForChannel(allData, currentChannel);
+        const cat = channelCats.find(c => c.name === categoryName)
+            || allData.categories.find(c => c.name === categoryName);
         if (!cat) return;
         renderTrend(cat);
         renderBooks(cat);
