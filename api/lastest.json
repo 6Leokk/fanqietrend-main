@@ -1,13 +1,13 @@
 {
-  "date": "2026-07-31",
-  "prev_date": "2026-07-30",
+  "date": "2026-08-01",
+  "prev_date": "2026-07-31",
   "primary_channel": "male",
   "types": [
     {
       "type": "all",
       "url": "api/lastest/all.json",
       "category_count": 37,
-      "book_count": 630
+      "book_count": 650
     },
     {
       "type": "西方奇幻",
@@ -112,7 +112,7 @@
       "channel": "male",
       "key": "male:悬疑灵异",
       "url": "api/lastest/male_%E6%82%AC%E7%96%91%E7%81%B5%E5%BC%82.json",
-      "book_count": 10
+      "book_count": 20
     },
     {
       "type": "抗战谍战",
@@ -133,7 +133,7 @@
       "channel": "male",
       "key": "male:动漫衍生",
       "url": "api/lastest/male_%E5%8A%A8%E6%BC%AB%E8%A1%8D%E7%94%9F.json",
-      "book_count": 10
+      "book_count": 20
     },
     {
       "type": "男频衍生",
