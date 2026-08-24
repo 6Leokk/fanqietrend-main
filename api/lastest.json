@@ -1,13 +1,13 @@
 {
-  "date": "2026-08-23",
-  "prev_date": "2026-08-22",
+  "date": "2026-08-24",
+  "prev_date": "2026-08-23",
   "primary_channel": "male",
   "types": [
     {
       "type": "all",
       "url": "api/lastest/all.json",
       "category_count": 37,
-      "book_count": 615
+      "book_count": 610
     },
     {
       "type": "西方奇幻",
@@ -28,21 +28,21 @@
       "channel": "male",
       "key": "male:科幻末世",
       "url": "api/lastest/male_%E7%A7%91%E5%B9%BB%E6%9C%AB%E4%B8%96.json",
-      "book_count": 0
+      "book_count": 20
     },
     {
       "type": "都市日常",
       "channel": "male",
       "key": "male:都市日常",
       "url": "api/lastest/male_%E9%83%BD%E5%B8%82%E6%97%A5%E5%B8%B8.json",
-      "book_count": 20
+      "book_count": 0
     },
     {
       "type": "都市修真",
       "channel": "male",
       "key": "male:都市修真",
       "url": "api/lastest/male_%E9%83%BD%E5%B8%82%E4%BF%AE%E7%9C%9F.json",
-      "book_count": 20
+      "book_count": 0
     },
     {
       "type": "都市高武",
@@ -217,7 +217,7 @@
       "channel": "female",
       "key": "female:古言脑洞",
       "url": "api/lastest/female_%E5%8F%A4%E8%A8%80%E8%84%91%E6%B4%9E.json",
-      "book_count": 0
+      "book_count": 15
     },
     {
       "type": "快穿",
