@@ -1,13 +1,13 @@
 {
-  "date": "2026-08-24",
-  "prev_date": "2026-08-23",
+  "date": "2026-08-25",
+  "prev_date": "2026-08-24",
   "primary_channel": "male",
   "types": [
     {
       "type": "all",
       "url": "api/lastest/all.json",
       "category_count": 37,
-      "book_count": 610
+      "book_count": 650
     },
     {
       "type": "西方奇幻",
@@ -35,14 +35,14 @@
       "channel": "male",
       "key": "male:都市日常",
       "url": "api/lastest/male_%E9%83%BD%E5%B8%82%E6%97%A5%E5%B8%B8.json",
-      "book_count": 0
+      "book_count": 20
     },
     {
       "type": "都市修真",
       "channel": "male",
       "key": "male:都市修真",
       "url": "api/lastest/male_%E9%83%BD%E5%B8%82%E4%BF%AE%E7%9C%9F.json",
-      "book_count": 0
+      "book_count": 20
     },
     {
       "type": "都市高武",
