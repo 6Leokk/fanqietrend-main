@@ -1,13 +1,13 @@
 {
-  "date": "2026-09-02",
-  "prev_date": "2026-09-01",
+  "date": "2026-09-03",
+  "prev_date": "2026-09-02",
   "primary_channel": "male",
   "types": [
     {
       "type": "all",
       "url": "api/lastest/all.json",
       "category_count": 37,
-      "book_count": 650
+      "book_count": 649
     },
     {
       "type": "西方奇幻",
@@ -140,7 +140,7 @@
       "channel": "male",
       "key": "male:男频衍生",
       "url": "api/lastest/male_%E7%94%B7%E9%A2%91%E8%A1%8D%E7%94%9F.json",
-      "book_count": 20
+      "book_count": 19
     },
     {
       "type": "古风世情",
