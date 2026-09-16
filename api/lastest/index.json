@@ -1,13 +1,13 @@
 {
-  "date": "2026-09-15",
-  "prev_date": "2026-09-14",
+  "date": "2026-09-16",
+  "prev_date": "2026-09-15",
   "primary_channel": "male",
   "types": [
     {
       "type": "all",
       "url": "api/lastest/all.json",
       "category_count": 37,
-      "book_count": 635
+      "book_count": 650
     },
     {
       "type": "西方奇幻",
@@ -210,7 +210,7 @@
       "channel": "female",
       "key": "female:悬疑脑洞",
       "url": "api/lastest/female_%E6%82%AC%E7%96%91%E8%84%91%E6%B4%9E.json",
-      "book_count": 0
+      "book_count": 15
     },
     {
       "type": "古言脑洞",
