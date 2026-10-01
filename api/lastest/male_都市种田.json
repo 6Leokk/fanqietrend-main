@@ -2,8 +2,8 @@
   "type": "都市种田",
   "channel": "male",
   "key": "male:都市种田",
-  "date": "2026-09-29",
-  "prev_date": "2026-09-28",
+  "date": "2026-10-01",
+  "prev_date": "2026-09-29",
   "category": {
     "name": "都市种田",
     "channel": "male",
@@ -11,241 +11,241 @@
     "trend": {
       "name": "都市种田",
       "channel": "male",
-      "new_count": 6,
-      "dropped_count": 6,
+      "new_count": 8,
+      "dropped_count": 8,
       "new_books": [
-        "停下吧苏总，国家已经兜不住了！",
-        "直播种田：徒手建别墅惊呆全网",
-        "入赘猎户家后，我在山上杀疯了",
-        "财阀败家子？我反手做空华尔街",
-        "重生1988当倒爷：只为这个家"
+        "六零，不想捡娃了，我想摆烂",
+        "1959：穿越南锣鼓巷有空间",
+        "重生1992，我有无限死士系统",
+        "重回淘宝年代：开局月入20万",
+        "港城1963从当差开始"
       ],
       "dropped_books": [
         {
-          "title": "分家只给破木船？我靠赶海赚麻了",
-          "intro": "八零年大雨夜，父亲刚死，亲妈为保小儿子的“香火”，逼迫生了女儿的林海净身出户，只留一艘漏水破船和高烧昏迷的女儿。面对妻女绝望的哭泣，林海意外觉醒全能海洋雷达系统！水下三十米尽收眼底，珍稀海货高亮闪烁！"
+          "title": "穿越70带弟弟下乡草原",
+          "intro": "代号孤狼的刘远，二十六岁，在中东战场厮杀十年，是佣兵界从无败绩的传奇。再凶险的刺杀、护卫任务，他都能完美完成，佣金从数十万一路涨到上亿。 他天生不信任线上数字资产，所有报酬统统兑换成现金美金与实心黄金"
         },
         {
-          "title": "1960，我真的吃不了一点苦",
-          "intro": "纯手工打造，放心阅读 孙奕睁开眼看着头顶黑漆漆的房梁，整个人都不好了，他记得他自己正在2026年参加自己85岁老友的葬礼，在葬礼上心情激动多喝了几杯，后面的事情就不知道了，等他再次醒来后自己就躺在这个"
+          "title": "带着毒贩宝库重生",
+          "intro": "赵海滨，一名35岁的华国国际缉毒警察，不幸在一次执行境外卧底任务时被毒枭杀害。 幸运的是，他重生了，回到了高三高考前夕。 更玄幻的是，重生后的赵海滨发现自己竟然把毒枭的藏宝库当成了随身空间。 赵海滨充"
         },
         {
-          "title": "重生：躺平的低调人生",
-          "intro": "（爽文+微挂+现实+日常+多女）三十六岁社畜牛马赵瀚洋，26年世界杯期间意外回到了高考刚结束后的时间，三十多岁才结婚生子的他本能的抗拒着日复一日的牛马生活，在绝不费心的前提下尽可能的让自己财富自由，当"
+          "title": "重生：做空华尔街，进军娱乐圈",
+          "intro": "2007年林远重生归来，借次贷危机做空华尔街，手握千亿资本。闯荡娱乐圈捧红一众女星，拿下好莱坞；入局汽车、互联网，截胡机遇，布局芯片面板与航天卫星。横跨诸多行业缔造庞大商业帝国，令各路巨头皆为之忌惮。"
         },
         {
-          "title": "六零年代，开局我被签到系统绑定",
-          "intro": "（穿越+系统+空间+单女主+生活日常） 本来在家里好好享受饭后放空时光，莫名其妙就穿越了！ 还是穿越到了平行时空的六零年代！ 一来就经历了退婚流，陆景年望着这布满裂痕的墙面，和脚上露脚趾的布鞋，欲哭无"
+          "title": "直播种田：徒手建别墅惊呆全网",
+          "intro": "林屿，苦读四年的农科大学生，毕业当天却拒绝城里的高薪工作，提着行李回了穷山沟，扬言要承包村里没人要的荒废果园。 爷爷气得拿竹条抽他，全村人笑他把书读傻了。 却不料，林屿一朝觉醒“专属商城系统”！开局获"
         },
         {
-          "title": "年代1958，从卫生干事开始！",
-          "intro": "王伟穿越了。 空间有了。 记忆融合了。 就是当上了交道口街道办的卫生干事。 大时代的浪潮下，王伟只想老老实实干自己的工作，最好就是能帮助亲朋好友度过这段艰苦岁月。 可事情有点变化，他先被抽调去密云工地"
+          "title": "财富自由后，我的悠闲生活",
+          "intro": "快要山穷水尽时，陈瑾才明白稳定收益永远压倒一切！只可惜他身体枯槁，已经严重透支。 重生后，陈瑾决定知行合一，赚取稳定财富，实现自由人生，潇洒生活。 本文纯手写，比较慢，勿怪！"
         }
       ],
       "top_risers": [
         {
-          "title": "年代：一分钟一块钱，创业当首富",
-          "change": "+6"
+          "title": "60年代：我有吉事情报系统",
+          "change": "+8"
         },
         {
-          "title": "1985：开局两个火星工厂",
-          "change": "+4"
+          "title": "停下吧苏总，国家已经兜不住了！",
+          "change": "+7"
         },
         {
-          "title": "带着毒贩宝库重生",
-          "change": "+3"
+          "title": "财阀败家子？我反手做空华尔街",
+          "change": "+5"
         }
       ],
       "top_fallers": [
         {
+          "title": "身家300亿美刀，重回1988",
+          "change": "-3"
+        },
+        {
           "title": "重生83：赘婿靠赶海翻身做主",
-          "change": "-2"
+          "change": "-3"
         },
         {
-          "title": "财富自由后，我的悠闲生活",
-          "change": "-2"
-        },
-        {
-          "title": "60年代：我有吉事情报系统",
-          "change": "-2"
+          "title": "我在新西兰当牧场大佬",
+          "change": "-1"
         }
       ],
       "reads_growth": [
         {
-          "title": "重生后我报复出轨老婆",
-          "growth": "+1.4万"
-        },
-        {
-          "title": "带着毒贩宝库重生",
-          "growth": "+1.3万"
+          "title": "停下吧苏总，国家已经兜不住了！",
+          "growth": "+3.8万"
         },
         {
           "title": "年代：一分钟一块钱，创业当首富",
-          "growth": "+1.0万"
+          "growth": "+1.2万"
+        },
+        {
+          "title": "60年代：我有吉事情报系统",
+          "growth": "+9000"
         }
       ],
-      "summary": "新增6本上榜；6本掉出（《分家只给破木船？我靠赶海赚麻了》、《1960，我真的吃不了一点苦》、《重生：躺平的低调人生》、《六零年代，开局我被签到系统绑定》、《年代1958，从卫生干事开始！》）；《年代：一分钟一块钱，创业当首富》排名上升+6位；《重生后我报复出轨老婆》阅读量+1.4万。"
+      "summary": "新增8本上榜；8本掉出（《穿越70带弟弟下乡草原》、《带着毒贩宝库重生》、《重生：做空华尔街，进军娱乐圈》、《直播种田：徒手建别墅惊呆全网》、《财富自由后，我的悠闲生活》）；《60年代：我有吉事情报系统》排名上升+8位；《停下吧苏总，国家已经兜不住了！》阅读量+3.8万。"
     },
     "books": [
       {
-        "title": "身家300亿美刀，重回1988",
-        "author": "西灯南火",
-        "reads": "11万",
-        "intro": "【年代+系统+神豪+大佬+商战】 朱望东为了完成爷爷的遗愿，决定踏上回乡寻亲之路。 因为飞机失事，意外回到了1988年，整个世界的时间线也因此而彻底改变。 但他三百亿美刀的身家，以及在阿美的产业却没有变化，还获得了“世界商店”系统。 这是贫穷的时代，也是最好的时代，朱望东毅然决定投身于改革开放的滚滚大潮之中。 凭借300亿美刀的雄厚资金，阿美的庞大的产业，世界商店的逆天，超强的商业嗅觉和领先几十年的战略眼光。 在全世界翻江倒海，搅动风云！ 一举成为全球首富的同时，更是带领国家提前多年完成了彻底工业化。 风云激荡，百舸争流，而我朱望东，要独占鳌头！",
-        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o8c3dfb4ffa5fe5ebccff88ab9bf5f9a4~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265555&x-signature=1gHM0sHdR3O5%2BRcCkcNCojPfc48%3D",
-        "url": "https://fanqienovel.com/page/7668634753360202776"
-      },
-      {
-        "title": "我在新西兰当牧场大佬",
-        "author": "浮生大铁锅",
-        "reads": "10.5万",
-        "intro": "从几百亩到上万亩的牧场，从默默无闻到享誉全球，他用顶级食材征服了全球！ 红颜相伴，牧场为家，他是国人之光——秦天！",
-        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2oc20d57f6b397a0af7a6c130307ae00ee~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265555&x-signature=%2B%2B0H4OR14gaByzI6GjpKXbjoOnU%3D",
-        "url": "https://fanqienovel.com/page/7663778287260273689"
-      },
-      {
         "title": "年代：一分钟一块钱，创业当首富",
         "author": "接地气的春芽",
-        "reads": "9.3万",
+        "reads": "10.5万",
         "intro": "张耀祖穿越到八十年代，觉醒发家致富系统。 系统LV1，一分钟1块钱。 系统LV2，一分钟2块钱。 系统LV3，一分钟4块钱。 …… 利用系统资金赚取1万元，系统提升到第二级。 赚取10万元，系统提升到第三级。 赚取100万元，系统提升到第四级。 …… 赚的越多，系统升级越快 ，金钱累积速度越快。 系统升级还有奖励，技术、人脉、生产线等应有尽有。 …… 阿祖，收手吧。 你都成首富了！",
-        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o585481474aef5a113b87fbf08001f191~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265555&x-signature=xyS%2FUVQ0Z5x%2BqHenT%2FTe6uIsc8c%3D",
+        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o585481474aef5a113b87fbf08001f191~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438946&x-signature=qaxA6d%2FSiJhfkhd78jnORvqehHA%3D",
         "url": "https://fanqienovel.com/page/7673426264983604249"
-      },
-      {
-        "title": "重生八零：姐姐们把我当驴用",
-        "author": "暴富小彤彤",
-        "reads": "7.7万",
-        "intro": "纨绔子弟秦安穿到80年代，成了村里头一号大傻子！ 　　天崩开局啊！ 　　他秦小爷可不受这窝囊气，不服就干！爱咋咋地！ 　　说不定干死了就能回到现实世界了。 　　结果干着干着就从农村到县城，再到省城、燕京！ 乘着时代的东风，高歌猛进！",
-        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o615e11b2eddcb173f617d59837a7be1f~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265555&x-signature=cFZg83s6rGvhrdPGy4wSwS3kOgc%3D",
-        "url": "https://fanqienovel.com/page/7664123347092900889"
-      },
-      {
-        "title": "穿越70带弟弟下乡草原",
-        "author": "酥肉咯牙多吃菜",
-        "reads": "7.5万",
-        "intro": "代号孤狼的刘远，二十六岁，在中东战场厮杀十年，是佣兵界从无败绩的传奇。再凶险的刺杀、护卫任务，他都能完美完成，佣金从数十万一路涨到上亿。 他天生不信任线上数字资产，所有报酬统统兑换成现金美金与实心黄金，私人金库内贵金属堆积如山，在圈子里独树一帜。 每次任务收尾，他只收金银、各类制式枪械，对目标身上的银行卡分文不取，理由直白粗暴 —— 没有密码，便是一堆无用铁片。 手握泼天财富的他难得放纵，搭乘私人游艇参加狂欢派对，几番痛饮彻底醉倒。 再度睁眼，海洋消失无踪。他魂穿到 1971 年四九城里同名少年刘远身上。 原主年仅十六，父母意外离世，身边只剩八岁年幼弟弟。黑心大伯趁机霸占双亲抚恤金还要强占老屋，后世思维的刘远和大伯一家彻底断亲，报名奔赴北疆草原下乡。 一身十年生死搏杀练就的顶尖格斗、侦查、生存本领刻在灵魂深处，后世一整座金库的珍宝枪械变成了随身空间。 昔日铁血孤狼，护住年幼弟弟，扎根草原。 打猎畜牧、巧手谋生，凭借远超时代的眼界与强悍身手，在贫瘠的草原上闯出安稳富足的好日子。",
-        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o312b0505008ab34827709e87273587b7~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265555&x-signature=G9ntlrjf1xz13we4hGtZ0Jqawvw%3D",
-        "url": "https://fanqienovel.com/page/7668899670990539800"
-      },
-      {
-        "title": "重生后我报复出轨老婆",
-        "author": "姜汁糖水啊",
-        "reads": "7.4万",
-        "intro": "叶昊有两个小姨子、一个小舅子，和老婆王雪结婚多年后才发现老婆是扶弟魔。 小舅子买车借钱，买房借钱，结婚借钱，后来叶昊炒股亏损去要钱补仓，岳父岳母一家耍无赖不还钱。 后续小舅子做生意又来借钱，叶昊直接拒绝，老婆瞒着他给小舅子担保贷款。 最后小舅子生意被坑，血本无归，银行找到叶昊一家，他不得不还银行贷款，白天工作晚上跑代驾，高强度的工作令他积劳成疾，偶然间发现老婆出轨，怒火攻心猝死。 上天给了他一次重来的机会，他重生回到2018年。 他发誓要让老婆一家付出代价。 六月份世界杯刚刚开始。 叶昊凭借脑海中的记忆，在世界杯赚到第一桶金。 他在疫情前创业开口罩公司、在牛市来临前投资股票。 依靠脑海中的记忆叶昊一步步崛起，成为商界顶级大佬。",
-        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o438af00d3951cf82675138b08897f4e4~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265555&x-signature=j1eHVFsMZsSVx5geZxwyZz8aBwU%3D",
-        "url": "https://fanqienovel.com/page/7674966804468354110"
-      },
-      {
-        "title": "带着毒贩宝库重生",
-        "author": "前线突击",
-        "reads": "7.2万",
-        "intro": "赵海滨，一名35岁的华国国际缉毒警察，不幸在一次执行境外卧底任务时被毒枭杀害。 幸运的是，他重生了，回到了高三高考前夕。 更玄幻的是，重生后的赵海滨发现自己竟然把毒枭的藏宝库当成了随身空间。 赵海滨充分利用重生的优势，帮助父母规避了海难，利用毒枭宝藏里的财富改善了家庭生活，治好了爷爷奶奶的疾病，尽力弥补前一世父母早逝，沦为孤儿的遗憾。并利用自己前世积累的经验，不断积累财富，扩大朋友圈，从此展开了一段波澜壮阔的传奇人生。",
-        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2oe3794714a880ac3a4b3b6152d2cca7ad~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265555&x-signature=JBDJ2GfqSHGwuRIY8xyod5IslCs%3D",
-        "url": "https://fanqienovel.com/page/7663291687531187224"
-      },
-      {
-        "title": "重生：做空华尔街，进军娱乐圈",
-        "author": "毛鸽",
-        "reads": "6.7万",
-        "intro": "2007年林远重生归来，借次贷危机做空华尔街，手握千亿资本。闯荡娱乐圈捧红一众女星，拿下好莱坞；入局汽车、互联网，截胡机遇，布局芯片面板与航天卫星。横跨诸多行业缔造庞大商业帝国，令各路巨头皆为之忌惮。",
-        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2od41f6749ea8d7db1ba6955b91c2f196d~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265555&x-signature=uqqUz4nFMjkkGX7ivzhp1sOESXY%3D",
-        "url": "https://fanqienovel.com/page/7670520636690664510"
       },
       {
         "title": "停下吧苏总，国家已经兜不住了！",
         "author": "全球高能",
-        "reads": "5.9万",
+        "reads": "9.7万",
         "intro": "【黑科技+工业摸底+军工强国】重回2002，苏铭为挽救自家工厂，推出一款碳纤维鱼竿，威龙鱼竿，永不空军！哪成想，卖了一周之后，真空军来到了工厂门口，苏铭人懵了！莫名其妙被列为国家S级保护人才，鱼竿也被迫参军了！本以为只是一个鱼竿，结果军方往工厂仓库一瞧，直接血压飙升十倍！ 能发射激光炮的手电筒，能给战机当隐身涂层的油漆，能给精确制导全球的降雨弹........",
-        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o79c78798475a4d9eab7dd6d3fa404b62~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265555&x-signature=6O7jcVuuzEfWA5POsvtVgF8E%2FqU%3D",
+        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o79c78798475a4d9eab7dd6d3fa404b62~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438946&x-signature=xbQRFikwQgzyQGpQIgGFTWmUWhI%3D",
         "url": "https://fanqienovel.com/page/7685070745231182872"
       },
       {
-        "title": "直播种田：徒手建别墅惊呆全网",
-        "author": "坠入蓝色幻想",
-        "reads": "4.8万",
-        "intro": "林屿，苦读四年的农科大学生，毕业当天却拒绝城里的高薪工作，提着行李回了穷山沟，扬言要承包村里没人要的荒废果园。 爷爷气得拿竹条抽他，全村人笑他把书读傻了。 却不料，林屿一朝觉醒“专属商城系统”！开局获得“阳光玫瑰”全球独家专利，更附赠满级建筑技能！ 从此，整个村子的画风都变了。 别人种地赔钱，他种的葡萄几百块一斤，顶级富豪开着跑车连夜排队抢！ 别人建房花几十万请团队，他开启直播，画图、绑钢筋、砌墙全包，一个人徒手干出一栋豪华大别墅！全网建筑专家看跪了！ 装逼打脸？系统说小意思！ 带领全村致富？系统说全安排！ 昔日的冷嘲热讽，今日变成全村人跪求带飞。 且看林屿如何从被群嘲的返乡大学生，逆袭成为全球农业大亨！ 这一次，我要站在世界之巅，让所有人知道，种地也能种出个世界首富！",
-        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o7c8b1ab3eb7dee8351ed85d7dc2248a7~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265555&x-signature=2971gT97aYfwVB%2FntxdxEScmiMk%3D",
-        "url": "https://fanqienovel.com/page/7673114823088950334"
+        "title": "我在新西兰当牧场大佬",
+        "author": "浮生大铁锅",
+        "reads": "9.2万",
+        "intro": "从几百亩到上万亩的牧场，从默默无闻到享誉全球，他用顶级食材征服了全球！ 红颜相伴，牧场为家，他是国人之光——秦天！",
+        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2oc20d57f6b397a0af7a6c130307ae00ee~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438946&x-signature=zOl64r0ZEYg0ka94pVnNNkRXQz8%3D",
+        "url": "https://fanqienovel.com/page/7663778287260273689"
       },
       {
-        "title": "1985：开局两个火星工厂",
-        "author": "西窗远",
-        "reads": "4.7万",
-        "intro": "（评分刚出，后面慢慢会涨的） 【年代文、种田、系统外挂、钢铁雄心、爬科技树、暴打鹰酱、星球大战、巨企路线、单女主】 1985年，冷战仍在持续，两极对峙，国内的改革来到了关键时刻，外贸刚起步，准备百万大裁军。 面对着这片百废俱兴的大地，刚穿越过来的林河有点欲哭无泪。 因为他身上有个钢铁雄心系统，可以生产各种军事装备，还能继续爬科技树，从二战一路升级到信息时代。 哎，没办法。 事已至此，先办个厂子发育一下吧。 …… 不到几年后，阿美莉卡的总统看到一群熟悉的陌生人出现在海湾战争，顿时脸色大变。 不好，沙漠里马上就要刷出印有中文的武器装备了，大家快跑！",
-        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2ofc7dbd4abf7d9a04e3468c45ddb0e07e~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265559&x-signature=bREp5pf52zwUvlH7nrWnCjV7epU%3D",
-        "url": "https://fanqienovel.com/page/7667938685790194713"
+        "title": "身家300亿美刀，重回1988",
+        "author": "西灯南火",
+        "reads": "8.6万",
+        "intro": "【年代+系统+神豪+大佬+商战】 朱望东为了完成爷爷的遗愿，决定踏上回乡寻亲之路。 因为飞机失事，意外回到了1988年，整个世界的时间线也因此而彻底改变。 但他三百亿美刀的身家，以及在阿美的产业却没有变化，还获得了“世界商店”系统。 这是贫穷的时代，也是最好的时代，朱望东毅然决定投身于改革开放的滚滚大潮之中。 凭借300亿美刀的雄厚资金，阿美的庞大的产业，世界商店的逆天，超强的商业嗅觉和领先几十年的战略眼光。 在全世界翻江倒海，搅动风云！ 一举成为全球首富的同时，更是带领国家提前多年完成了彻底工业化。 风云激荡，百舸争流，而我朱望东，要独占鳌头！",
+        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o8c3dfb4ffa5fe5ebccff88ab9bf5f9a4~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438946&x-signature=u%2BB7PSBjjb7FwUmuNCpHniNwnQk%3D",
+        "url": "https://fanqienovel.com/page/7668634753360202776"
       },
       {
-        "title": "入赘猎户家后，我在山上杀疯了",
-        "author": "常山钓子龙",
-        "reads": "4.6万",
-        "intro": "【年代+空间+种田打猎+单女主+杀伐果断】 现代钓鱼佬搏斗巨物失败，一朝穿越到1959年，成为下放“右派”的随迁家属，开局就遇到猎户独女借种。 被迫入赘后，他打猎、种田、养家，偶尔再帮治安队抓一下藏在山里的坏人。 慢慢地，整座大山都成了他的后花园！",
-        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o19552b24ff316b0ff7c6c51fbcc2dfe2~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265559&x-signature=h5xdhL708et36rABhCUvTno5DYA%3D",
-        "url": "https://fanqienovel.com/page/7670190326853684248"
+        "title": "重生八零：姐姐们把我当驴用",
+        "author": "暴富小彤彤",
+        "reads": "8.1万",
+        "intro": "纨绔子弟秦安穿到80年代，成了村里头一号大傻子！ 　　天崩开局啊！ 　　他秦小爷可不受这窝囊气，不服就干！爱咋咋地！ 　　说不定干死了就能回到现实世界了。 　　结果干着干着就从农村到县城，再到省城、燕京！ 乘着时代的东风，高歌猛进！",
+        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o615e11b2eddcb173f617d59837a7be1f~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438946&x-signature=xfBj3i4VrnJPMLqb3TGEbXRDQf0%3D",
+        "url": "https://fanqienovel.com/page/7664123347092900889"
       },
       {
-        "title": "重生83：赘婿靠赶海翻身做主",
-        "author": "我爱小地雷",
-        "reads": "4.6万",
-        "intro": "[重生]➕[赘婿]➕[赶海]➕[系统] 上门女婿顶不住80年代的流言蜚语沉迷喝酒！ 老丈人养了三年觉得是个养不熟的白眼狼，要求分家，导致老婆周楠带着儿子周振投海。 自那天刘晨被周家扔出了周家大门，也是那天刘晨醒了，一直干到身价千万。 却在病床上重生到分家那天，一切都还来的及，老婆孩子都在！ 重生了怎么能没个系统呢，刘晨觉醒了海图系统，移动的探鱼雷达，别人空桶，他的桶已经满的盖不住了。",
-        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2of565a18f4b6a48a75a7a418407369b37~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265559&x-signature=bI0iU2wbbepCRZOq%2FefbM3l5nZE%3D",
-        "url": "https://fanqienovel.com/page/7661275940546169880"
+        "title": "重生后我报复出轨老婆",
+        "author": "姜汁糖水啊",
+        "reads": "7.6万",
+        "intro": "【重生2018+创业+风流+多女+商业帝国+】 叶昊和老婆王雪结婚后才发现老婆是扶弟魔。 小舅子买车借钱，买房借钱，结婚借钱，后来炒股亏损叶尘去要钱补仓，老丈人一家耍无赖不还钱。 后续老婆瞒着他给小舅子担保贷款。 小舅子生意被坑，血本无归，叶昊白天工作晚上跑代驾还贷款，高强度的工作令他积劳成疾猝死。 上天给了他一次重来的机会，他重生回到2018年。 六月份世界杯刚刚开始，漂亮国科技股大牛市、黄金大牛市还没来临。 叶昊凭借脑海中的记忆，在世界杯赚到第一桶金。 他创业开公司、唱歌作词、投资股票、黄金，依靠脑海中的记忆一步步崛起，成为商界顶级大佬。",
+        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o438af00d3951cf82675138b08897f4e4~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438946&x-signature=WLaNMpRndGNzyziakN%2FdCP6AOcU%3D",
+        "url": "https://fanqienovel.com/page/7674966804468354110"
       },
       {
-        "title": "财阀败家子？我反手做空华尔街",
-        "author": "拾晚归",
-        "reads": "4.5万",
-        "intro": "一觉醒来，楚衍重回1997年亚洲金融风暴前夕。 此时，家族企业摇摇欲坠，内有亲戚勾结外资企图夺权，外有海外资本磨刀霍霍。 作为江州最臭名昭著的“顶级败家子”，所有人都等着看楚衍家破人亡、流落街头。 面对绝境，楚衍将家族最后的一笔资金疯狂砸向海外。 以离岸公司为矛，在华尔街掀起腥风血雨，反向狂揽千亿美金！ 赚得盆满钵满后，他没有炫富，而是转身回国，隐姓埋名开启硬核“科技种田”。 收购破产国营大厂、收编底层狠汉、招募落魄科研疯子…… 从精密机床到光刻机，从新能源到新材料，一座庞大的东方科技帝国拔地而起！ 当华尔街大鳄联手企图做空龙国经济，当家族叛徒以为大局已定。 楚衍撕下伪装，亮出底牌。 全球骇然发现，那位令华尔街闻风丧胆的金融大鳄，和打破西方技术垄断的东方科技教父，竟是同一个人！",
-        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o6ae913baf518a29a2b994f496173bc6b~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265559&x-signature=ezyf6EeFPnoEeWNXizLPVCLdBWo%3D",
-        "url": "https://fanqienovel.com/page/7680523072138382361"
-      },
-      {
-        "title": "财富自由后，我的悠闲生活",
-        "author": "梓溪",
-        "reads": "4.3万",
-        "intro": "快要山穷水尽时，陈瑾才明白稳定收益永远压倒一切！只可惜他身体枯槁，已经严重透支。 重生后，陈瑾决定知行合一，赚取稳定财富，实现自由人生，潇洒生活。 本文纯手写，比较慢，勿怪！",
-        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o270dfff6578a81acfcf52107fe05f766~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265559&x-signature=3rFMdVDJp1cRy%2BBqEqWg7qKNFP0%3D",
-        "url": "https://fanqienovel.com/page/7674156974384106521"
+        "title": "六零，不想捡娃了，我想摆烂",
+        "author": "逛逛看看瞅瞅",
+        "reads": "6.2万",
+        "intro": "刚被系统强迫开启新一轮时空任务的李在 没想到系统被抹杀了， 理由 ，建国后不许成精 也没想到刚获得自由还没一天就心软捡了个刚出生的奶娃娃。 更没想到，去个公社还能再捡。 李在双眼无神的望着到处乱爬的一群奶娃娃，想哭",
+        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/ai-mark/p2ob81fa84b8e6186c29c6695ba4252918c~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438946&x-signature=hEsesXxUKEx9zN9a22eWXn%2BDbIU%3D",
+        "url": "https://fanqienovel.com/page/7655764916804013080"
       },
       {
         "title": "60年代：我有吉事情报系统",
         "author": "唐跑跑",
-        "reads": "4.2万",
+        "reads": "5.1万",
         "intro": "【轻系统，无毒点，不虐主，整体风格轻快，偏日常生活】 林胜利重生1959年，获得吉事情报系统，靠着吉事情报，改善自己的生活，改变自己的命运。 吉事情报抽取中： 情报1：撞树的兔子 情报2：丢失的枪支 情报3：地主的财富 情报4：遗留的军火库 ......... （简介无力，请看正文，坚持手搓，无AI）",
-        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o9f656746a24a0bf0efd37c381a24f3e1~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265559&x-signature=G%2FtIMr3UXBlsKnmAyojoLMGLEpI%3D",
+        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o9f656746a24a0bf0efd37c381a24f3e1~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438946&x-signature=M0awhVOgfCmIopsSHoEeD0kkvtg%3D",
         "url": "https://fanqienovel.com/page/7671461703673973785"
       },
       {
-        "title": "重生1988当倒爷：只为这个家",
-        "author": "键盘上的滴答",
-        "reads": "4.1万",
-        "intro": "【无系统空间、无反派无极品家人、传统年代文、发家致富】 主角重生回到1988年，恰好回到与初恋缠绵的那天，别无选择，唯有负责。 前世，主角让家人受苦受难，让白月光失望，让初恋怨恨。 这一世，他会用自己的努力，让家人过上好日子，让爱自己的人幸福。 那么......从倒爷开始发家致富。 —— 从混球到家人认可：我不是开玩笑，我真的在付出行动。 从吃糠咽菜到顿顿有肉：我用倒买倒卖换取家人温饱。 从被人看不起到点头哈腰：我不是过去的混球，我家的顶梁柱！ 从一无所有到万元户：风浪越大，鱼越贵！ 从二溜子到屯子的领头人：村民为我赚钱，我让他们家家过上好日子。 —— 80年代，从小生意开始。",
-        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2od9ef1db2a6c556f12081c85504e0aa25~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265559&x-signature=15NXsHw%2BRpdnbIyV%2BJsrgYOb2qI%3D",
-        "url": "https://fanqienovel.com/page/7668257953048169497"
+        "title": "财阀败家子？我反手做空华尔街",
+        "author": "拾晚归",
+        "reads": "5.1万",
+        "intro": "一觉醒来，楚衍重回1997年亚洲金融风暴前夕。 此时，家族企业摇摇欲坠，内有亲戚勾结外资企图夺权，外有海外资本磨刀霍霍。 作为江州最臭名昭著的“顶级败家子”，所有人都等着看楚衍家破人亡、流落街头。 面对绝境，楚衍将家族最后的一笔资金疯狂砸向海外。 以离岸公司为矛，在华尔街掀起腥风血雨，反向狂揽千亿美金！ 赚得盆满钵满后，他没有炫富，而是转身回国，隐姓埋名开启硬核“科技种田”。 收购破产国营大厂、收编底层狠汉、招募落魄科研疯子…… 从精密机床到光刻机，从新能源到新材料，一座庞大的东方科技帝国拔地而起！ 当华尔街大鳄联手企图做空龙国经济，当家族叛徒以为大局已定。 楚衍撕下伪装，亮出底牌。 全球骇然发现，那位令华尔街闻风丧胆的金融大鳄，和打破西方技术垄断的东方科技教父，竟是同一个人！",
+        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o6ae913baf518a29a2b994f496173bc6b~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438946&x-signature=nyUz53nso62%2B08c9eJ%2BlYqYCOt0%3D",
+        "url": "https://fanqienovel.com/page/7680523072138382361"
       },
       {
-        "title": "重生84：暴击赶海带全村吃大肉",
-        "author": "码字不熬夜的猫",
+        "title": "1959：穿越南锣鼓巷有空间",
+        "author": "牙膏泡沫沫",
+        "reads": "4.5万",
+        "intro": "穿越 1959 年南锣鼓巷，家中粮缸见底，父亲工伤瘫痪。王向东觉醒无限保鲜空间，严守秘密绝不暴露！码头扛包借运输损耗积攒粮食，后海捕鱼换药，进山猎野味，信托商店捡漏。凭本事拿下轧钢厂铁饭碗，不圣母不张扬，闷声改善家境，困难年月里，护住一家人好好过日子！",
+        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2of2b8010502fe4b575997d8a99fd06c67~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438946&x-signature=zR5oo8e1Y3L3yfNtPKj0FIjwOZw%3D",
+        "url": "https://fanqienovel.com/page/7685374670408797208"
+      },
+      {
+        "title": "1985：开局两个火星工厂",
+        "author": "西窗远",
+        "reads": "4.5万",
+        "intro": "（评分刚出，后面慢慢会涨的） 【年代文、种田、系统外挂、钢铁雄心、爬科技树、暴打鹰酱、星球大战、巨企路线、单女主】 1985年，冷战仍在持续，两极对峙，国内的改革来到了关键时刻，外贸刚起步，准备百万大裁军。 面对着这片百废俱兴的大地，刚穿越过来的林河有点欲哭无泪。 因为他身上有个钢铁雄心系统，可以生产各种军事装备，还能继续爬科技树，从二战一路升级到信息时代。 哎，没办法。 事已至此，先办个厂子发育一下吧。 …… 不到几年后，阿美莉卡的总统看到一群熟悉的陌生人出现在海湾战争，顿时脸色大变。 不好，沙漠里马上就要刷出印有中文的武器装备了，大家快跑！",
+        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2ofc7dbd4abf7d9a04e3468c45ddb0e07e~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438950&x-signature=GmptTEnnh0VXYf6xo%2B7VTAJHIoc%3D",
+        "url": "https://fanqienovel.com/page/7667938685790194713"
+      },
+      {
+        "title": "重生1992，我有无限死士系统",
+        "author": "划船哥",
+        "reads": "4.5万",
+        "intro": "李阳被大运送回了1992年那个野蛮的时代，李阳本以为重生已经是自己的王炸，没想到老天爷还贴心的送给了他一个死士系统，于是满手王炸牌的李阳在这个野蛮时代一路狂飙，他也想看看上辈子从没见过的风景！",
+        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o9bf92e224bce33c795e45da6232ac884~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438950&x-signature=AecfGWSOUeRUtSOMTx4vbsdlKSk%3D",
+        "url": "https://fanqienovel.com/page/7617279775840685080"
+      },
+      {
+        "title": "入赘猎户家后，我在山上杀疯了",
+        "author": "常山钓子龙",
+        "reads": "4.4万",
+        "intro": "【年代+空间+种田打猎+单女主+杀伐果断】 现代钓鱼佬搏斗巨物失败，一朝穿越到1959年，成为下放“右派”的随迁家属，开局就遇到猎户独女借种。 被迫入赘后，他打猎、种田、养家，偶尔再帮治安队抓一下藏在山里的坏人。 慢慢地，整座大山都成了他的后花园！",
+        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o19552b24ff316b0ff7c6c51fbcc2dfe2~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438950&x-signature=vtsKewkL7zO%2FdDoKcKLvfqIHR3w%3D",
+        "url": "https://fanqienovel.com/page/7670190326853684248"
+      },
+      {
+        "title": "重回淘宝年代：开局月入20万",
+        "author": "1988辣椒兔",
+        "reads": "4.2万",
+        "intro": "【渣男】、【多女主】、【搞事业】 2006年，淘宝刚火。 没人懂搜索排名，没人做详情页优化，没人知道什么叫转化率。 贺洵重生回来，满脑子都是未来二十年的电商打法。 别人看不懂的，他全看得懂。别人不敢踩的，他踩了还能全身而退。 等等，你开店归开店，女朋友越开越多是几个意思？",
+        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o836f7e29bb464ed3e99655d20671dd29~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438950&x-signature=BybUz6UiMAV5YHlXB9Gg3uhkhRU%3D",
+        "url": "https://fanqienovel.com/page/7680786746006572094"
+      },
+      {
+        "title": "港城1963从当差开始",
+        "author": "三心宝宝",
+        "reads": "4.1万",
+        "intro": "成功之日百花拥，谁人还忆来时路？ 潜龙在渊，你可以叫我发仔； 飞龙在天，你叫我什么？ 黄金年代，龙蛇起陆，枭雄争霸乱中起，谁人笑我不丈夫？",
+        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2obecd2e5ddd420409e1aee7f1ec10e804~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438950&x-signature=fQ4HElmgD%2FHvtHEzkJyeauoQQLo%3D",
+        "url": "https://fanqienovel.com/page/7673439705051958334"
+      },
+      {
+        "title": "重生83：赘婿靠赶海翻身做主",
+        "author": "我爱小地雷",
         "reads": "4万",
-        "intro": "重生归来，陈海生只想挣大钱，让家人过好日子，顺便带全村吃大肉。 意外开启《赶海暴击》系统。 “暴击成功，两只螃蟹，瞬间变为螃蟹大迁徙” “暴击成功：一斤多的石斑，瞬间变百斤巨物！” “……” “警告：此处海货已泛滥成灾！” 陈海生：各位叔伯婶娘们，我带你们挣钱吃大肉！",
-        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2oa5a9228a2775d94b1107e9eeb6ac0be4~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265559&x-signature=b4TBuopVsxYnE%2BqK8TT21l8z31g%3D",
-        "url": "https://fanqienovel.com/page/7673045428367002686"
+        "intro": "[重生]➕[赘婿]➕[赶海]➕[系统] 上门女婿顶不住80年代的流言蜚语沉迷喝酒！ 老丈人养了三年觉得是个养不熟的白眼狼，要求分家，导致老婆周楠带着儿子周振投海。 自那天刘晨被周家扔出了周家大门，也是那天刘晨醒了，一直干到身价千万。 却在病床上重生到分家那天，一切都还来的及，老婆孩子都在！ 重生了怎么能没个系统呢，刘晨觉醒了海图系统，移动的探鱼雷达，别人空桶，他的桶已经满的盖不住了。",
+        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2of565a18f4b6a48a75a7a418407369b37~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438950&x-signature=vLHN6kqHgHRUtYHhz8ys4si%2FeFY%3D",
+        "url": "https://fanqienovel.com/page/7661275940546169880"
       },
       {
         "title": "从三国杀圈钱到第九艺术震惊世界",
         "author": "沧屿寻舟",
-        "reads": "4万",
+        "reads": "3.9万",
         "intro": "【穿越制作游戏】【制作三国杀】【游戏制作文】 穿越到蓝星的陈楚阳发现这个世界的游戏市场虽然非常大，但是游戏制作的却不怎么样。 为了在这个世界发家致富走向人生巅峰，同时也为了玩到那些自己喜欢的游戏，陈楚阳决定给这个世界的游戏界来上一些降维打击。 第一款游戏，三国杀。 为了宣传游戏，陈楚阳搬运《曹操》制作宣传片配音，引得音乐天王求歌。 为了宣传游戏，陈楚阳做出周瑜点将，秋风五丈原经典场景宣传PV，让全网泪目。 腾鹅游戏抄袭三国杀？ 陈楚阳反手就掏出缝合怪幻兽帕鲁反击腾鹅游戏的精灵王国。 就这样一步一步之下，陈楚阳建立起自己的游戏帝国。",
-        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2oeb879cbb02fd5c58ed06daef9b0b62b2~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265559&x-signature=s6oxjs%2FlD26RC2NJZC9BIVE0G3g%3D",
+        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2oeb879cbb02fd5c58ed06daef9b0b62b2~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438950&x-signature=YR3MqMLGay11aai2HF4cNw7u5IY%3D",
         "url": "https://fanqienovel.com/page/7666818311526566937"
       },
       {
-        "title": "身为护林员，我骑虎巡山很合理吧",
-        "author": "日更不摆烂的猫",
+        "title": "重回08：都重生了，谁还吃苦啊",
+        "author": "侃妄言",
         "reads": "3.9万",
-        "intro": "“进大厂是不可能的，这辈子都不可能给资本家当牛马。” 别人毕业疯狂投简历，林野毕业直接跑去深山当护林员。 只因他偏偏拥有一方随身空间，空间里有个灵泉，越靠近自然灵泉产水量越高。 人喝了能强身健体，动物喝了能开启灵智，植物浇一滴就疯狂生长！ 唯一的缺点就是有些无聊，于是林野开启了直播。 当他身后走出一头三米多长的华南虎，瞬间引爆全网。 同行主播荒野求生，饿得啃树皮；他骑虎巡山，猴王献桃。 什么？有偷猎者？ 愿阎王保佑他们能活下来吧！ 多年以后。 网友：“主播，你都快把神农架搞成灵兽园了！” 林野叹气：“我真只想安静巡个山啊……”",
-        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o6ff735aeca406f9a5f7b08fc8828f467~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265559&x-signature=fKeB6WXW%2F8AvErl6DN6j%2BAaH44I%3D",
-        "url": "https://fanqienovel.com/page/7673933332362578968"
+        "intro": "【无系统 + 多女主 + 都市日常 + 创业爽文】 前世杨昆半生打拼，吃够生活的苦。 意外重生回十八岁，只想享受人生。 我吃了一辈子苦，还不能好好享受享受？",
+        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2ob1e5594ad070c91ec5a81f4498b31188~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438950&x-signature=294CcPhMDluLdTwxABj3up9s9OY%3D",
+        "url": "https://fanqienovel.com/page/7668881257471675417"
+      },
+      {
+        "title": "重生2002：从抽奖暴富开始",
+        "author": "紫色恒星",
+        "reads": "3.8万",
+        "intro": "李翀重生了，回到2002年，十二岁。 上辈子他考了师范当老师，日子平淡如水。这辈子他不想再平凡。 比特币？7年以后才有。互联网大潮？他没钱没人脉，才十二岁，谁会搭理他！房地产？更不可能了！ 那他能干什么呢？ 有了！他凭记忆从商场抽奖箱顶上摸走了特等奖——68万的丰田皇冠。 但这只是开始。 靠这笔钱，他要让卖水果的父母告别风吹日晒，要让高考落榜的姐姐走上另一条路，要在这个遍地黄金的年代，一步步打下属于自己的商业帝国。 亲情、友情、爱情，这一世他全都要。 2002年，风刚起，他正好在风口上。",
+        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o40339917ee5006ca07aca32f09d2e92f~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438950&x-signature=pWdTpirD1jdKBoOnFjF6YqzT%2Fz0%3D",
+        "url": "https://fanqienovel.com/page/7676823335770016793"
+      },
+      {
+        "title": "年代：开局义妹，签到迎多美人生",
+        "author": "捕捉野生大大老虎",
+        "reads": "3.5万",
+        "intro": "【年代+系统+空间+多女主+打猎+医术】 陈昭阳重生了，回到1971的小山村！ 再一次面对苏雪的表白，他没有犹豫，“我也喜欢你”，五个字坚定回答。 前世他选择了逃跑，害苏雪投河自尽。 这一世，他拥美入怀，不再放手。 当晚，觉醒【一日一签到系统】 ，签到得丰厚奖励。 三倍强化，身体素质飙升。 灵泉空间，种植养殖两不误。 现代医学知识加身，中医，西医两手抓。 时代转变，机遇危机遍地。 而他，要成为时代主角。 更要让喜欢他爱他的人都过上幸福的日子，虽然这些人好像有点多......",
+        "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o998662103dc9f742f9fd0662519ef56c~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438950&x-signature=YP5z8aMhRhTg1aV3U1cLX7gGAw0%3D",
+        "url": "https://fanqienovel.com/page/7667529558941240345"
       }
     ]
   },
@@ -257,241 +257,241 @@
       "trend": {
         "name": "都市种田",
         "channel": "male",
-        "new_count": 6,
-        "dropped_count": 6,
+        "new_count": 8,
+        "dropped_count": 8,
         "new_books": [
-          "停下吧苏总，国家已经兜不住了！",
-          "直播种田：徒手建别墅惊呆全网",
-          "入赘猎户家后，我在山上杀疯了",
-          "财阀败家子？我反手做空华尔街",
-          "重生1988当倒爷：只为这个家"
+          "六零，不想捡娃了，我想摆烂",
+          "1959：穿越南锣鼓巷有空间",
+          "重生1992，我有无限死士系统",
+          "重回淘宝年代：开局月入20万",
+          "港城1963从当差开始"
         ],
         "dropped_books": [
           {
-            "title": "分家只给破木船？我靠赶海赚麻了",
-            "intro": "八零年大雨夜，父亲刚死，亲妈为保小儿子的“香火”，逼迫生了女儿的林海净身出户，只留一艘漏水破船和高烧昏迷的女儿。面对妻女绝望的哭泣，林海意外觉醒全能海洋雷达系统！水下三十米尽收眼底，珍稀海货高亮闪烁！"
+            "title": "穿越70带弟弟下乡草原",
+            "intro": "代号孤狼的刘远，二十六岁，在中东战场厮杀十年，是佣兵界从无败绩的传奇。再凶险的刺杀、护卫任务，他都能完美完成，佣金从数十万一路涨到上亿。 他天生不信任线上数字资产，所有报酬统统兑换成现金美金与实心黄金"
           },
           {
-            "title": "1960，我真的吃不了一点苦",
-            "intro": "纯手工打造，放心阅读 孙奕睁开眼看着头顶黑漆漆的房梁，整个人都不好了，他记得他自己正在2026年参加自己85岁老友的葬礼，在葬礼上心情激动多喝了几杯，后面的事情就不知道了，等他再次醒来后自己就躺在这个"
+            "title": "带着毒贩宝库重生",
+            "intro": "赵海滨，一名35岁的华国国际缉毒警察，不幸在一次执行境外卧底任务时被毒枭杀害。 幸运的是，他重生了，回到了高三高考前夕。 更玄幻的是，重生后的赵海滨发现自己竟然把毒枭的藏宝库当成了随身空间。 赵海滨充"
           },
           {
-            "title": "重生：躺平的低调人生",
-            "intro": "（爽文+微挂+现实+日常+多女）三十六岁社畜牛马赵瀚洋，26年世界杯期间意外回到了高考刚结束后的时间，三十多岁才结婚生子的他本能的抗拒着日复一日的牛马生活，在绝不费心的前提下尽可能的让自己财富自由，当"
+            "title": "重生：做空华尔街，进军娱乐圈",
+            "intro": "2007年林远重生归来，借次贷危机做空华尔街，手握千亿资本。闯荡娱乐圈捧红一众女星，拿下好莱坞；入局汽车、互联网，截胡机遇，布局芯片面板与航天卫星。横跨诸多行业缔造庞大商业帝国，令各路巨头皆为之忌惮。"
           },
           {
-            "title": "六零年代，开局我被签到系统绑定",
-            "intro": "（穿越+系统+空间+单女主+生活日常） 本来在家里好好享受饭后放空时光，莫名其妙就穿越了！ 还是穿越到了平行时空的六零年代！ 一来就经历了退婚流，陆景年望着这布满裂痕的墙面，和脚上露脚趾的布鞋，欲哭无"
+            "title": "直播种田：徒手建别墅惊呆全网",
+            "intro": "林屿，苦读四年的农科大学生，毕业当天却拒绝城里的高薪工作，提着行李回了穷山沟，扬言要承包村里没人要的荒废果园。 爷爷气得拿竹条抽他，全村人笑他把书读傻了。 却不料，林屿一朝觉醒“专属商城系统”！开局获"
           },
           {
-            "title": "年代1958，从卫生干事开始！",
-            "intro": "王伟穿越了。 空间有了。 记忆融合了。 就是当上了交道口街道办的卫生干事。 大时代的浪潮下，王伟只想老老实实干自己的工作，最好就是能帮助亲朋好友度过这段艰苦岁月。 可事情有点变化，他先被抽调去密云工地"
+            "title": "财富自由后，我的悠闲生活",
+            "intro": "快要山穷水尽时，陈瑾才明白稳定收益永远压倒一切！只可惜他身体枯槁，已经严重透支。 重生后，陈瑾决定知行合一，赚取稳定财富，实现自由人生，潇洒生活。 本文纯手写，比较慢，勿怪！"
           }
         ],
         "top_risers": [
           {
-            "title": "年代：一分钟一块钱，创业当首富",
-            "change": "+6"
+            "title": "60年代：我有吉事情报系统",
+            "change": "+8"
           },
           {
-            "title": "1985：开局两个火星工厂",
-            "change": "+4"
+            "title": "停下吧苏总，国家已经兜不住了！",
+            "change": "+7"
           },
           {
-            "title": "带着毒贩宝库重生",
-            "change": "+3"
+            "title": "财阀败家子？我反手做空华尔街",
+            "change": "+5"
           }
         ],
         "top_fallers": [
           {
+            "title": "身家300亿美刀，重回1988",
+            "change": "-3"
+          },
+          {
             "title": "重生83：赘婿靠赶海翻身做主",
-            "change": "-2"
+            "change": "-3"
           },
           {
-            "title": "财富自由后，我的悠闲生活",
-            "change": "-2"
-          },
-          {
-            "title": "60年代：我有吉事情报系统",
-            "change": "-2"
+            "title": "我在新西兰当牧场大佬",
+            "change": "-1"
           }
         ],
         "reads_growth": [
           {
-            "title": "重生后我报复出轨老婆",
-            "growth": "+1.4万"
-          },
-          {
-            "title": "带着毒贩宝库重生",
-            "growth": "+1.3万"
+            "title": "停下吧苏总，国家已经兜不住了！",
+            "growth": "+3.8万"
           },
           {
             "title": "年代：一分钟一块钱，创业当首富",
-            "growth": "+1.0万"
+            "growth": "+1.2万"
+          },
+          {
+            "title": "60年代：我有吉事情报系统",
+            "growth": "+9000"
           }
         ],
-        "summary": "新增6本上榜；6本掉出（《分家只给破木船？我靠赶海赚麻了》、《1960，我真的吃不了一点苦》、《重生：躺平的低调人生》、《六零年代，开局我被签到系统绑定》、《年代1958，从卫生干事开始！》）；《年代：一分钟一块钱，创业当首富》排名上升+6位；《重生后我报复出轨老婆》阅读量+1.4万。"
+        "summary": "新增8本上榜；8本掉出（《穿越70带弟弟下乡草原》、《带着毒贩宝库重生》、《重生：做空华尔街，进军娱乐圈》、《直播种田：徒手建别墅惊呆全网》、《财富自由后，我的悠闲生活》）；《60年代：我有吉事情报系统》排名上升+8位；《停下吧苏总，国家已经兜不住了！》阅读量+3.8万。"
       },
       "books": [
         {
-          "title": "身家300亿美刀，重回1988",
-          "author": "西灯南火",
-          "reads": "11万",
-          "intro": "【年代+系统+神豪+大佬+商战】 朱望东为了完成爷爷的遗愿，决定踏上回乡寻亲之路。 因为飞机失事，意外回到了1988年，整个世界的时间线也因此而彻底改变。 但他三百亿美刀的身家，以及在阿美的产业却没有变化，还获得了“世界商店”系统。 这是贫穷的时代，也是最好的时代，朱望东毅然决定投身于改革开放的滚滚大潮之中。 凭借300亿美刀的雄厚资金，阿美的庞大的产业，世界商店的逆天，超强的商业嗅觉和领先几十年的战略眼光。 在全世界翻江倒海，搅动风云！ 一举成为全球首富的同时，更是带领国家提前多年完成了彻底工业化。 风云激荡，百舸争流，而我朱望东，要独占鳌头！",
-          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o8c3dfb4ffa5fe5ebccff88ab9bf5f9a4~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265555&x-signature=1gHM0sHdR3O5%2BRcCkcNCojPfc48%3D",
-          "url": "https://fanqienovel.com/page/7668634753360202776"
-        },
-        {
-          "title": "我在新西兰当牧场大佬",
-          "author": "浮生大铁锅",
-          "reads": "10.5万",
-          "intro": "从几百亩到上万亩的牧场，从默默无闻到享誉全球，他用顶级食材征服了全球！ 红颜相伴，牧场为家，他是国人之光——秦天！",
-          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2oc20d57f6b397a0af7a6c130307ae00ee~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265555&x-signature=%2B%2B0H4OR14gaByzI6GjpKXbjoOnU%3D",
-          "url": "https://fanqienovel.com/page/7663778287260273689"
-        },
-        {
           "title": "年代：一分钟一块钱，创业当首富",
           "author": "接地气的春芽",
-          "reads": "9.3万",
+          "reads": "10.5万",
           "intro": "张耀祖穿越到八十年代，觉醒发家致富系统。 系统LV1，一分钟1块钱。 系统LV2，一分钟2块钱。 系统LV3，一分钟4块钱。 …… 利用系统资金赚取1万元，系统提升到第二级。 赚取10万元，系统提升到第三级。 赚取100万元，系统提升到第四级。 …… 赚的越多，系统升级越快 ，金钱累积速度越快。 系统升级还有奖励，技术、人脉、生产线等应有尽有。 …… 阿祖，收手吧。 你都成首富了！",
-          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o585481474aef5a113b87fbf08001f191~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265555&x-signature=xyS%2FUVQ0Z5x%2BqHenT%2FTe6uIsc8c%3D",
+          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o585481474aef5a113b87fbf08001f191~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438946&x-signature=qaxA6d%2FSiJhfkhd78jnORvqehHA%3D",
           "url": "https://fanqienovel.com/page/7673426264983604249"
-        },
-        {
-          "title": "重生八零：姐姐们把我当驴用",
-          "author": "暴富小彤彤",
-          "reads": "7.7万",
-          "intro": "纨绔子弟秦安穿到80年代，成了村里头一号大傻子！ 　　天崩开局啊！ 　　他秦小爷可不受这窝囊气，不服就干！爱咋咋地！ 　　说不定干死了就能回到现实世界了。 　　结果干着干着就从农村到县城，再到省城、燕京！ 乘着时代的东风，高歌猛进！",
-          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o615e11b2eddcb173f617d59837a7be1f~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265555&x-signature=cFZg83s6rGvhrdPGy4wSwS3kOgc%3D",
-          "url": "https://fanqienovel.com/page/7664123347092900889"
-        },
-        {
-          "title": "穿越70带弟弟下乡草原",
-          "author": "酥肉咯牙多吃菜",
-          "reads": "7.5万",
-          "intro": "代号孤狼的刘远，二十六岁，在中东战场厮杀十年，是佣兵界从无败绩的传奇。再凶险的刺杀、护卫任务，他都能完美完成，佣金从数十万一路涨到上亿。 他天生不信任线上数字资产，所有报酬统统兑换成现金美金与实心黄金，私人金库内贵金属堆积如山，在圈子里独树一帜。 每次任务收尾，他只收金银、各类制式枪械，对目标身上的银行卡分文不取，理由直白粗暴 —— 没有密码，便是一堆无用铁片。 手握泼天财富的他难得放纵，搭乘私人游艇参加狂欢派对，几番痛饮彻底醉倒。 再度睁眼，海洋消失无踪。他魂穿到 1971 年四九城里同名少年刘远身上。 原主年仅十六，父母意外离世，身边只剩八岁年幼弟弟。黑心大伯趁机霸占双亲抚恤金还要强占老屋，后世思维的刘远和大伯一家彻底断亲，报名奔赴北疆草原下乡。 一身十年生死搏杀练就的顶尖格斗、侦查、生存本领刻在灵魂深处，后世一整座金库的珍宝枪械变成了随身空间。 昔日铁血孤狼，护住年幼弟弟，扎根草原。 打猎畜牧、巧手谋生，凭借远超时代的眼界与强悍身手，在贫瘠的草原上闯出安稳富足的好日子。",
-          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o312b0505008ab34827709e87273587b7~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265555&x-signature=G9ntlrjf1xz13we4hGtZ0Jqawvw%3D",
-          "url": "https://fanqienovel.com/page/7668899670990539800"
-        },
-        {
-          "title": "重生后我报复出轨老婆",
-          "author": "姜汁糖水啊",
-          "reads": "7.4万",
-          "intro": "叶昊有两个小姨子、一个小舅子，和老婆王雪结婚多年后才发现老婆是扶弟魔。 小舅子买车借钱，买房借钱，结婚借钱，后来叶昊炒股亏损去要钱补仓，岳父岳母一家耍无赖不还钱。 后续小舅子做生意又来借钱，叶昊直接拒绝，老婆瞒着他给小舅子担保贷款。 最后小舅子生意被坑，血本无归，银行找到叶昊一家，他不得不还银行贷款，白天工作晚上跑代驾，高强度的工作令他积劳成疾，偶然间发现老婆出轨，怒火攻心猝死。 上天给了他一次重来的机会，他重生回到2018年。 他发誓要让老婆一家付出代价。 六月份世界杯刚刚开始。 叶昊凭借脑海中的记忆，在世界杯赚到第一桶金。 他在疫情前创业开口罩公司、在牛市来临前投资股票。 依靠脑海中的记忆叶昊一步步崛起，成为商界顶级大佬。",
-          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o438af00d3951cf82675138b08897f4e4~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265555&x-signature=j1eHVFsMZsSVx5geZxwyZz8aBwU%3D",
-          "url": "https://fanqienovel.com/page/7674966804468354110"
-        },
-        {
-          "title": "带着毒贩宝库重生",
-          "author": "前线突击",
-          "reads": "7.2万",
-          "intro": "赵海滨，一名35岁的华国国际缉毒警察，不幸在一次执行境外卧底任务时被毒枭杀害。 幸运的是，他重生了，回到了高三高考前夕。 更玄幻的是，重生后的赵海滨发现自己竟然把毒枭的藏宝库当成了随身空间。 赵海滨充分利用重生的优势，帮助父母规避了海难，利用毒枭宝藏里的财富改善了家庭生活，治好了爷爷奶奶的疾病，尽力弥补前一世父母早逝，沦为孤儿的遗憾。并利用自己前世积累的经验，不断积累财富，扩大朋友圈，从此展开了一段波澜壮阔的传奇人生。",
-          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2oe3794714a880ac3a4b3b6152d2cca7ad~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265555&x-signature=JBDJ2GfqSHGwuRIY8xyod5IslCs%3D",
-          "url": "https://fanqienovel.com/page/7663291687531187224"
-        },
-        {
-          "title": "重生：做空华尔街，进军娱乐圈",
-          "author": "毛鸽",
-          "reads": "6.7万",
-          "intro": "2007年林远重生归来，借次贷危机做空华尔街，手握千亿资本。闯荡娱乐圈捧红一众女星，拿下好莱坞；入局汽车、互联网，截胡机遇，布局芯片面板与航天卫星。横跨诸多行业缔造庞大商业帝国，令各路巨头皆为之忌惮。",
-          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2od41f6749ea8d7db1ba6955b91c2f196d~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265555&x-signature=uqqUz4nFMjkkGX7ivzhp1sOESXY%3D",
-          "url": "https://fanqienovel.com/page/7670520636690664510"
         },
         {
           "title": "停下吧苏总，国家已经兜不住了！",
           "author": "全球高能",
-          "reads": "5.9万",
+          "reads": "9.7万",
           "intro": "【黑科技+工业摸底+军工强国】重回2002，苏铭为挽救自家工厂，推出一款碳纤维鱼竿，威龙鱼竿，永不空军！哪成想，卖了一周之后，真空军来到了工厂门口，苏铭人懵了！莫名其妙被列为国家S级保护人才，鱼竿也被迫参军了！本以为只是一个鱼竿，结果军方往工厂仓库一瞧，直接血压飙升十倍！ 能发射激光炮的手电筒，能给战机当隐身涂层的油漆，能给精确制导全球的降雨弹........",
-          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o79c78798475a4d9eab7dd6d3fa404b62~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265555&x-signature=6O7jcVuuzEfWA5POsvtVgF8E%2FqU%3D",
+          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o79c78798475a4d9eab7dd6d3fa404b62~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438946&x-signature=xbQRFikwQgzyQGpQIgGFTWmUWhI%3D",
           "url": "https://fanqienovel.com/page/7685070745231182872"
         },
         {
-          "title": "直播种田：徒手建别墅惊呆全网",
-          "author": "坠入蓝色幻想",
-          "reads": "4.8万",
-          "intro": "林屿，苦读四年的农科大学生，毕业当天却拒绝城里的高薪工作，提着行李回了穷山沟，扬言要承包村里没人要的荒废果园。 爷爷气得拿竹条抽他，全村人笑他把书读傻了。 却不料，林屿一朝觉醒“专属商城系统”！开局获得“阳光玫瑰”全球独家专利，更附赠满级建筑技能！ 从此，整个村子的画风都变了。 别人种地赔钱，他种的葡萄几百块一斤，顶级富豪开着跑车连夜排队抢！ 别人建房花几十万请团队，他开启直播，画图、绑钢筋、砌墙全包，一个人徒手干出一栋豪华大别墅！全网建筑专家看跪了！ 装逼打脸？系统说小意思！ 带领全村致富？系统说全安排！ 昔日的冷嘲热讽，今日变成全村人跪求带飞。 且看林屿如何从被群嘲的返乡大学生，逆袭成为全球农业大亨！ 这一次，我要站在世界之巅，让所有人知道，种地也能种出个世界首富！",
-          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o7c8b1ab3eb7dee8351ed85d7dc2248a7~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265555&x-signature=2971gT97aYfwVB%2FntxdxEScmiMk%3D",
-          "url": "https://fanqienovel.com/page/7673114823088950334"
+          "title": "我在新西兰当牧场大佬",
+          "author": "浮生大铁锅",
+          "reads": "9.2万",
+          "intro": "从几百亩到上万亩的牧场，从默默无闻到享誉全球，他用顶级食材征服了全球！ 红颜相伴，牧场为家，他是国人之光——秦天！",
+          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2oc20d57f6b397a0af7a6c130307ae00ee~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438946&x-signature=zOl64r0ZEYg0ka94pVnNNkRXQz8%3D",
+          "url": "https://fanqienovel.com/page/7663778287260273689"
         },
         {
-          "title": "1985：开局两个火星工厂",
-          "author": "西窗远",
-          "reads": "4.7万",
-          "intro": "（评分刚出，后面慢慢会涨的） 【年代文、种田、系统外挂、钢铁雄心、爬科技树、暴打鹰酱、星球大战、巨企路线、单女主】 1985年，冷战仍在持续，两极对峙，国内的改革来到了关键时刻，外贸刚起步，准备百万大裁军。 面对着这片百废俱兴的大地，刚穿越过来的林河有点欲哭无泪。 因为他身上有个钢铁雄心系统，可以生产各种军事装备，还能继续爬科技树，从二战一路升级到信息时代。 哎，没办法。 事已至此，先办个厂子发育一下吧。 …… 不到几年后，阿美莉卡的总统看到一群熟悉的陌生人出现在海湾战争，顿时脸色大变。 不好，沙漠里马上就要刷出印有中文的武器装备了，大家快跑！",
-          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2ofc7dbd4abf7d9a04e3468c45ddb0e07e~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265559&x-signature=bREp5pf52zwUvlH7nrWnCjV7epU%3D",
-          "url": "https://fanqienovel.com/page/7667938685790194713"
+          "title": "身家300亿美刀，重回1988",
+          "author": "西灯南火",
+          "reads": "8.6万",
+          "intro": "【年代+系统+神豪+大佬+商战】 朱望东为了完成爷爷的遗愿，决定踏上回乡寻亲之路。 因为飞机失事，意外回到了1988年，整个世界的时间线也因此而彻底改变。 但他三百亿美刀的身家，以及在阿美的产业却没有变化，还获得了“世界商店”系统。 这是贫穷的时代，也是最好的时代，朱望东毅然决定投身于改革开放的滚滚大潮之中。 凭借300亿美刀的雄厚资金，阿美的庞大的产业，世界商店的逆天，超强的商业嗅觉和领先几十年的战略眼光。 在全世界翻江倒海，搅动风云！ 一举成为全球首富的同时，更是带领国家提前多年完成了彻底工业化。 风云激荡，百舸争流，而我朱望东，要独占鳌头！",
+          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o8c3dfb4ffa5fe5ebccff88ab9bf5f9a4~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438946&x-signature=u%2BB7PSBjjb7FwUmuNCpHniNwnQk%3D",
+          "url": "https://fanqienovel.com/page/7668634753360202776"
         },
         {
-          "title": "入赘猎户家后，我在山上杀疯了",
-          "author": "常山钓子龙",
-          "reads": "4.6万",
-          "intro": "【年代+空间+种田打猎+单女主+杀伐果断】 现代钓鱼佬搏斗巨物失败，一朝穿越到1959年，成为下放“右派”的随迁家属，开局就遇到猎户独女借种。 被迫入赘后，他打猎、种田、养家，偶尔再帮治安队抓一下藏在山里的坏人。 慢慢地，整座大山都成了他的后花园！",
-          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o19552b24ff316b0ff7c6c51fbcc2dfe2~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265559&x-signature=h5xdhL708et36rABhCUvTno5DYA%3D",
-          "url": "https://fanqienovel.com/page/7670190326853684248"
+          "title": "重生八零：姐姐们把我当驴用",
+          "author": "暴富小彤彤",
+          "reads": "8.1万",
+          "intro": "纨绔子弟秦安穿到80年代，成了村里头一号大傻子！ 　　天崩开局啊！ 　　他秦小爷可不受这窝囊气，不服就干！爱咋咋地！ 　　说不定干死了就能回到现实世界了。 　　结果干着干着就从农村到县城，再到省城、燕京！ 乘着时代的东风，高歌猛进！",
+          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o615e11b2eddcb173f617d59837a7be1f~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438946&x-signature=xfBj3i4VrnJPMLqb3TGEbXRDQf0%3D",
+          "url": "https://fanqienovel.com/page/7664123347092900889"
         },
         {
-          "title": "重生83：赘婿靠赶海翻身做主",
-          "author": "我爱小地雷",
-          "reads": "4.6万",
-          "intro": "[重生]➕[赘婿]➕[赶海]➕[系统] 上门女婿顶不住80年代的流言蜚语沉迷喝酒！ 老丈人养了三年觉得是个养不熟的白眼狼，要求分家，导致老婆周楠带着儿子周振投海。 自那天刘晨被周家扔出了周家大门，也是那天刘晨醒了，一直干到身价千万。 却在病床上重生到分家那天，一切都还来的及，老婆孩子都在！ 重生了怎么能没个系统呢，刘晨觉醒了海图系统，移动的探鱼雷达，别人空桶，他的桶已经满的盖不住了。",
-          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2of565a18f4b6a48a75a7a418407369b37~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265559&x-signature=bI0iU2wbbepCRZOq%2FefbM3l5nZE%3D",
-          "url": "https://fanqienovel.com/page/7661275940546169880"
+          "title": "重生后我报复出轨老婆",
+          "author": "姜汁糖水啊",
+          "reads": "7.6万",
+          "intro": "【重生2018+创业+风流+多女+商业帝国+】 叶昊和老婆王雪结婚后才发现老婆是扶弟魔。 小舅子买车借钱，买房借钱，结婚借钱，后来炒股亏损叶尘去要钱补仓，老丈人一家耍无赖不还钱。 后续老婆瞒着他给小舅子担保贷款。 小舅子生意被坑，血本无归，叶昊白天工作晚上跑代驾还贷款，高强度的工作令他积劳成疾猝死。 上天给了他一次重来的机会，他重生回到2018年。 六月份世界杯刚刚开始，漂亮国科技股大牛市、黄金大牛市还没来临。 叶昊凭借脑海中的记忆，在世界杯赚到第一桶金。 他创业开公司、唱歌作词、投资股票、黄金，依靠脑海中的记忆一步步崛起，成为商界顶级大佬。",
+          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o438af00d3951cf82675138b08897f4e4~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438946&x-signature=WLaNMpRndGNzyziakN%2FdCP6AOcU%3D",
+          "url": "https://fanqienovel.com/page/7674966804468354110"
         },
         {
-          "title": "财阀败家子？我反手做空华尔街",
-          "author": "拾晚归",
-          "reads": "4.5万",
-          "intro": "一觉醒来，楚衍重回1997年亚洲金融风暴前夕。 此时，家族企业摇摇欲坠，内有亲戚勾结外资企图夺权，外有海外资本磨刀霍霍。 作为江州最臭名昭著的“顶级败家子”，所有人都等着看楚衍家破人亡、流落街头。 面对绝境，楚衍将家族最后的一笔资金疯狂砸向海外。 以离岸公司为矛，在华尔街掀起腥风血雨，反向狂揽千亿美金！ 赚得盆满钵满后，他没有炫富，而是转身回国，隐姓埋名开启硬核“科技种田”。 收购破产国营大厂、收编底层狠汉、招募落魄科研疯子…… 从精密机床到光刻机，从新能源到新材料，一座庞大的东方科技帝国拔地而起！ 当华尔街大鳄联手企图做空龙国经济，当家族叛徒以为大局已定。 楚衍撕下伪装，亮出底牌。 全球骇然发现，那位令华尔街闻风丧胆的金融大鳄，和打破西方技术垄断的东方科技教父，竟是同一个人！",
-          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o6ae913baf518a29a2b994f496173bc6b~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265559&x-signature=ezyf6EeFPnoEeWNXizLPVCLdBWo%3D",
-          "url": "https://fanqienovel.com/page/7680523072138382361"
-        },
-        {
-          "title": "财富自由后，我的悠闲生活",
-          "author": "梓溪",
-          "reads": "4.3万",
-          "intro": "快要山穷水尽时，陈瑾才明白稳定收益永远压倒一切！只可惜他身体枯槁，已经严重透支。 重生后，陈瑾决定知行合一，赚取稳定财富，实现自由人生，潇洒生活。 本文纯手写，比较慢，勿怪！",
-          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o270dfff6578a81acfcf52107fe05f766~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265559&x-signature=3rFMdVDJp1cRy%2BBqEqWg7qKNFP0%3D",
-          "url": "https://fanqienovel.com/page/7674156974384106521"
+          "title": "六零，不想捡娃了，我想摆烂",
+          "author": "逛逛看看瞅瞅",
+          "reads": "6.2万",
+          "intro": "刚被系统强迫开启新一轮时空任务的李在 没想到系统被抹杀了， 理由 ，建国后不许成精 也没想到刚获得自由还没一天就心软捡了个刚出生的奶娃娃。 更没想到，去个公社还能再捡。 李在双眼无神的望着到处乱爬的一群奶娃娃，想哭",
+          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/ai-mark/p2ob81fa84b8e6186c29c6695ba4252918c~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438946&x-signature=hEsesXxUKEx9zN9a22eWXn%2BDbIU%3D",
+          "url": "https://fanqienovel.com/page/7655764916804013080"
         },
         {
           "title": "60年代：我有吉事情报系统",
           "author": "唐跑跑",
-          "reads": "4.2万",
+          "reads": "5.1万",
           "intro": "【轻系统，无毒点，不虐主，整体风格轻快，偏日常生活】 林胜利重生1959年，获得吉事情报系统，靠着吉事情报，改善自己的生活，改变自己的命运。 吉事情报抽取中： 情报1：撞树的兔子 情报2：丢失的枪支 情报3：地主的财富 情报4：遗留的军火库 ......... （简介无力，请看正文，坚持手搓，无AI）",
-          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o9f656746a24a0bf0efd37c381a24f3e1~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265559&x-signature=G%2FtIMr3UXBlsKnmAyojoLMGLEpI%3D",
+          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o9f656746a24a0bf0efd37c381a24f3e1~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438946&x-signature=M0awhVOgfCmIopsSHoEeD0kkvtg%3D",
           "url": "https://fanqienovel.com/page/7671461703673973785"
         },
         {
-          "title": "重生1988当倒爷：只为这个家",
-          "author": "键盘上的滴答",
-          "reads": "4.1万",
-          "intro": "【无系统空间、无反派无极品家人、传统年代文、发家致富】 主角重生回到1988年，恰好回到与初恋缠绵的那天，别无选择，唯有负责。 前世，主角让家人受苦受难，让白月光失望，让初恋怨恨。 这一世，他会用自己的努力，让家人过上好日子，让爱自己的人幸福。 那么......从倒爷开始发家致富。 —— 从混球到家人认可：我不是开玩笑，我真的在付出行动。 从吃糠咽菜到顿顿有肉：我用倒买倒卖换取家人温饱。 从被人看不起到点头哈腰：我不是过去的混球，我家的顶梁柱！ 从一无所有到万元户：风浪越大，鱼越贵！ 从二溜子到屯子的领头人：村民为我赚钱，我让他们家家过上好日子。 —— 80年代，从小生意开始。",
-          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2od9ef1db2a6c556f12081c85504e0aa25~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265559&x-signature=15NXsHw%2BRpdnbIyV%2BJsrgYOb2qI%3D",
-          "url": "https://fanqienovel.com/page/7668257953048169497"
+          "title": "财阀败家子？我反手做空华尔街",
+          "author": "拾晚归",
+          "reads": "5.1万",
+          "intro": "一觉醒来，楚衍重回1997年亚洲金融风暴前夕。 此时，家族企业摇摇欲坠，内有亲戚勾结外资企图夺权，外有海外资本磨刀霍霍。 作为江州最臭名昭著的“顶级败家子”，所有人都等着看楚衍家破人亡、流落街头。 面对绝境，楚衍将家族最后的一笔资金疯狂砸向海外。 以离岸公司为矛，在华尔街掀起腥风血雨，反向狂揽千亿美金！ 赚得盆满钵满后，他没有炫富，而是转身回国，隐姓埋名开启硬核“科技种田”。 收购破产国营大厂、收编底层狠汉、招募落魄科研疯子…… 从精密机床到光刻机，从新能源到新材料，一座庞大的东方科技帝国拔地而起！ 当华尔街大鳄联手企图做空龙国经济，当家族叛徒以为大局已定。 楚衍撕下伪装，亮出底牌。 全球骇然发现，那位令华尔街闻风丧胆的金融大鳄，和打破西方技术垄断的东方科技教父，竟是同一个人！",
+          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o6ae913baf518a29a2b994f496173bc6b~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438946&x-signature=nyUz53nso62%2B08c9eJ%2BlYqYCOt0%3D",
+          "url": "https://fanqienovel.com/page/7680523072138382361"
         },
         {
-          "title": "重生84：暴击赶海带全村吃大肉",
-          "author": "码字不熬夜的猫",
+          "title": "1959：穿越南锣鼓巷有空间",
+          "author": "牙膏泡沫沫",
+          "reads": "4.5万",
+          "intro": "穿越 1959 年南锣鼓巷，家中粮缸见底，父亲工伤瘫痪。王向东觉醒无限保鲜空间，严守秘密绝不暴露！码头扛包借运输损耗积攒粮食，后海捕鱼换药，进山猎野味，信托商店捡漏。凭本事拿下轧钢厂铁饭碗，不圣母不张扬，闷声改善家境，困难年月里，护住一家人好好过日子！",
+          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2of2b8010502fe4b575997d8a99fd06c67~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438946&x-signature=zR5oo8e1Y3L3yfNtPKj0FIjwOZw%3D",
+          "url": "https://fanqienovel.com/page/7685374670408797208"
+        },
+        {
+          "title": "1985：开局两个火星工厂",
+          "author": "西窗远",
+          "reads": "4.5万",
+          "intro": "（评分刚出，后面慢慢会涨的） 【年代文、种田、系统外挂、钢铁雄心、爬科技树、暴打鹰酱、星球大战、巨企路线、单女主】 1985年，冷战仍在持续，两极对峙，国内的改革来到了关键时刻，外贸刚起步，准备百万大裁军。 面对着这片百废俱兴的大地，刚穿越过来的林河有点欲哭无泪。 因为他身上有个钢铁雄心系统，可以生产各种军事装备，还能继续爬科技树，从二战一路升级到信息时代。 哎，没办法。 事已至此，先办个厂子发育一下吧。 …… 不到几年后，阿美莉卡的总统看到一群熟悉的陌生人出现在海湾战争，顿时脸色大变。 不好，沙漠里马上就要刷出印有中文的武器装备了，大家快跑！",
+          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2ofc7dbd4abf7d9a04e3468c45ddb0e07e~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438950&x-signature=GmptTEnnh0VXYf6xo%2B7VTAJHIoc%3D",
+          "url": "https://fanqienovel.com/page/7667938685790194713"
+        },
+        {
+          "title": "重生1992，我有无限死士系统",
+          "author": "划船哥",
+          "reads": "4.5万",
+          "intro": "李阳被大运送回了1992年那个野蛮的时代，李阳本以为重生已经是自己的王炸，没想到老天爷还贴心的送给了他一个死士系统，于是满手王炸牌的李阳在这个野蛮时代一路狂飙，他也想看看上辈子从没见过的风景！",
+          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o9bf92e224bce33c795e45da6232ac884~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438950&x-signature=AecfGWSOUeRUtSOMTx4vbsdlKSk%3D",
+          "url": "https://fanqienovel.com/page/7617279775840685080"
+        },
+        {
+          "title": "入赘猎户家后，我在山上杀疯了",
+          "author": "常山钓子龙",
+          "reads": "4.4万",
+          "intro": "【年代+空间+种田打猎+单女主+杀伐果断】 现代钓鱼佬搏斗巨物失败，一朝穿越到1959年，成为下放“右派”的随迁家属，开局就遇到猎户独女借种。 被迫入赘后，他打猎、种田、养家，偶尔再帮治安队抓一下藏在山里的坏人。 慢慢地，整座大山都成了他的后花园！",
+          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o19552b24ff316b0ff7c6c51fbcc2dfe2~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438950&x-signature=vtsKewkL7zO%2FdDoKcKLvfqIHR3w%3D",
+          "url": "https://fanqienovel.com/page/7670190326853684248"
+        },
+        {
+          "title": "重回淘宝年代：开局月入20万",
+          "author": "1988辣椒兔",
+          "reads": "4.2万",
+          "intro": "【渣男】、【多女主】、【搞事业】 2006年，淘宝刚火。 没人懂搜索排名，没人做详情页优化，没人知道什么叫转化率。 贺洵重生回来，满脑子都是未来二十年的电商打法。 别人看不懂的，他全看得懂。别人不敢踩的，他踩了还能全身而退。 等等，你开店归开店，女朋友越开越多是几个意思？",
+          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o836f7e29bb464ed3e99655d20671dd29~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438950&x-signature=BybUz6UiMAV5YHlXB9Gg3uhkhRU%3D",
+          "url": "https://fanqienovel.com/page/7680786746006572094"
+        },
+        {
+          "title": "港城1963从当差开始",
+          "author": "三心宝宝",
+          "reads": "4.1万",
+          "intro": "成功之日百花拥，谁人还忆来时路？ 潜龙在渊，你可以叫我发仔； 飞龙在天，你叫我什么？ 黄金年代，龙蛇起陆，枭雄争霸乱中起，谁人笑我不丈夫？",
+          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2obecd2e5ddd420409e1aee7f1ec10e804~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438950&x-signature=fQ4HElmgD%2FHvtHEzkJyeauoQQLo%3D",
+          "url": "https://fanqienovel.com/page/7673439705051958334"
+        },
+        {
+          "title": "重生83：赘婿靠赶海翻身做主",
+          "author": "我爱小地雷",
           "reads": "4万",
-          "intro": "重生归来，陈海生只想挣大钱，让家人过好日子，顺便带全村吃大肉。 意外开启《赶海暴击》系统。 “暴击成功，两只螃蟹，瞬间变为螃蟹大迁徙” “暴击成功：一斤多的石斑，瞬间变百斤巨物！” “……” “警告：此处海货已泛滥成灾！” 陈海生：各位叔伯婶娘们，我带你们挣钱吃大肉！",
-          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2oa5a9228a2775d94b1107e9eeb6ac0be4~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265559&x-signature=b4TBuopVsxYnE%2BqK8TT21l8z31g%3D",
-          "url": "https://fanqienovel.com/page/7673045428367002686"
+          "intro": "[重生]➕[赘婿]➕[赶海]➕[系统] 上门女婿顶不住80年代的流言蜚语沉迷喝酒！ 老丈人养了三年觉得是个养不熟的白眼狼，要求分家，导致老婆周楠带着儿子周振投海。 自那天刘晨被周家扔出了周家大门，也是那天刘晨醒了，一直干到身价千万。 却在病床上重生到分家那天，一切都还来的及，老婆孩子都在！ 重生了怎么能没个系统呢，刘晨觉醒了海图系统，移动的探鱼雷达，别人空桶，他的桶已经满的盖不住了。",
+          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2of565a18f4b6a48a75a7a418407369b37~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438950&x-signature=vLHN6kqHgHRUtYHhz8ys4si%2FeFY%3D",
+          "url": "https://fanqienovel.com/page/7661275940546169880"
         },
         {
           "title": "从三国杀圈钱到第九艺术震惊世界",
           "author": "沧屿寻舟",
-          "reads": "4万",
+          "reads": "3.9万",
           "intro": "【穿越制作游戏】【制作三国杀】【游戏制作文】 穿越到蓝星的陈楚阳发现这个世界的游戏市场虽然非常大，但是游戏制作的却不怎么样。 为了在这个世界发家致富走向人生巅峰，同时也为了玩到那些自己喜欢的游戏，陈楚阳决定给这个世界的游戏界来上一些降维打击。 第一款游戏，三国杀。 为了宣传游戏，陈楚阳搬运《曹操》制作宣传片配音，引得音乐天王求歌。 为了宣传游戏，陈楚阳做出周瑜点将，秋风五丈原经典场景宣传PV，让全网泪目。 腾鹅游戏抄袭三国杀？ 陈楚阳反手就掏出缝合怪幻兽帕鲁反击腾鹅游戏的精灵王国。 就这样一步一步之下，陈楚阳建立起自己的游戏帝国。",
-          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2oeb879cbb02fd5c58ed06daef9b0b62b2~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265559&x-signature=s6oxjs%2FlD26RC2NJZC9BIVE0G3g%3D",
+          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2oeb879cbb02fd5c58ed06daef9b0b62b2~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438950&x-signature=YR3MqMLGay11aai2HF4cNw7u5IY%3D",
           "url": "https://fanqienovel.com/page/7666818311526566937"
         },
         {
-          "title": "身为护林员，我骑虎巡山很合理吧",
-          "author": "日更不摆烂的猫",
+          "title": "重回08：都重生了，谁还吃苦啊",
+          "author": "侃妄言",
           "reads": "3.9万",
-          "intro": "“进大厂是不可能的，这辈子都不可能给资本家当牛马。” 别人毕业疯狂投简历，林野毕业直接跑去深山当护林员。 只因他偏偏拥有一方随身空间，空间里有个灵泉，越靠近自然灵泉产水量越高。 人喝了能强身健体，动物喝了能开启灵智，植物浇一滴就疯狂生长！ 唯一的缺点就是有些无聊，于是林野开启了直播。 当他身后走出一头三米多长的华南虎，瞬间引爆全网。 同行主播荒野求生，饿得啃树皮；他骑虎巡山，猴王献桃。 什么？有偷猎者？ 愿阎王保佑他们能活下来吧！ 多年以后。 网友：“主播，你都快把神农架搞成灵兽园了！” 林野叹气：“我真只想安静巡个山啊……”",
-          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o6ff735aeca406f9a5f7b08fc8828f467~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791265559&x-signature=fKeB6WXW%2F8AvErl6DN6j%2BAaH44I%3D",
-          "url": "https://fanqienovel.com/page/7673933332362578968"
+          "intro": "【无系统 + 多女主 + 都市日常 + 创业爽文】 前世杨昆半生打拼，吃够生活的苦。 意外重生回十八岁，只想享受人生。 我吃了一辈子苦，还不能好好享受享受？",
+          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2ob1e5594ad070c91ec5a81f4498b31188~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438950&x-signature=294CcPhMDluLdTwxABj3up9s9OY%3D",
+          "url": "https://fanqienovel.com/page/7668881257471675417"
+        },
+        {
+          "title": "重生2002：从抽奖暴富开始",
+          "author": "紫色恒星",
+          "reads": "3.8万",
+          "intro": "李翀重生了，回到2002年，十二岁。 上辈子他考了师范当老师，日子平淡如水。这辈子他不想再平凡。 比特币？7年以后才有。互联网大潮？他没钱没人脉，才十二岁，谁会搭理他！房地产？更不可能了！ 那他能干什么呢？ 有了！他凭记忆从商场抽奖箱顶上摸走了特等奖——68万的丰田皇冠。 但这只是开始。 靠这笔钱，他要让卖水果的父母告别风吹日晒，要让高考落榜的姐姐走上另一条路，要在这个遍地黄金的年代，一步步打下属于自己的商业帝国。 亲情、友情、爱情，这一世他全都要。 2002年，风刚起，他正好在风口上。",
+          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o40339917ee5006ca07aca32f09d2e92f~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438950&x-signature=pWdTpirD1jdKBoOnFjF6YqzT%2Fz0%3D",
+          "url": "https://fanqienovel.com/page/7676823335770016793"
+        },
+        {
+          "title": "年代：开局义妹，签到迎多美人生",
+          "author": "捕捉野生大大老虎",
+          "reads": "3.5万",
+          "intro": "【年代+系统+空间+多女主+打猎+医术】 陈昭阳重生了，回到1971的小山村！ 再一次面对苏雪的表白，他没有犹豫，“我也喜欢你”，五个字坚定回答。 前世他选择了逃跑，害苏雪投河自尽。 这一世，他拥美入怀，不再放手。 当晚，觉醒【一日一签到系统】 ，签到得丰厚奖励。 三倍强化，身体素质飙升。 灵泉空间，种植养殖两不误。 现代医学知识加身，中医，西医两手抓。 时代转变，机遇危机遍地。 而他，要成为时代主角。 更要让喜欢他爱他的人都过上幸福的日子，虽然这些人好像有点多......",
+          "cover": "https://p3-reading-sign.fqnovelpic.com/novel-pic/p2o998662103dc9f742f9fd0662519ef56c~tplv-resize:225:0.image?lk3s=5b7047ff&x-expires=1791438950&x-signature=YP5z8aMhRhTg1aV3U1cLX7gGAw0%3D",
+          "url": "https://fanqienovel.com/page/7667529558941240345"
         }
       ]
     }
