@@ -1,13 +1,13 @@
 {
-  "date": "2026-10-10",
-  "prev_date": "2026-10-09",
+  "date": "2026-10-11",
+  "prev_date": "2026-10-10",
   "primary_channel": "male",
   "types": [
     {
       "type": "all",
       "url": "api/lastest/all.json",
       "category_count": 37,
-      "book_count": 650
+      "book_count": 645
     },
     {
       "type": "西方奇幻",
@@ -266,7 +266,7 @@
       "channel": "female",
       "key": "female:民国言情",
       "url": "api/lastest/female_%E6%B0%91%E5%9B%BD%E8%A8%80%E6%83%85.json",
-      "book_count": 15
+      "book_count": 10
     }
   ]
 }
