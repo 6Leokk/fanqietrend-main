@@ -1,13 +1,13 @@
 {
-  "date": "2026-10-13",
-  "prev_date": "2026-10-11",
+  "date": "2026-10-14",
+  "prev_date": "2026-10-13",
   "primary_channel": "male",
   "types": [
     {
       "type": "all",
       "url": "api/lastest/all.json",
       "category_count": 37,
-      "book_count": 610
+      "book_count": 650
     },
     {
       "type": "西方奇幻",
@@ -119,7 +119,7 @@
       "channel": "male",
       "key": "male:抗战谍战",
       "url": "api/lastest/male_%E6%8A%97%E6%88%98%E8%B0%8D%E6%88%98.json",
-      "book_count": 10
+      "book_count": 20
     },
     {
       "type": "游戏体育",
@@ -217,7 +217,7 @@
       "channel": "female",
       "key": "female:古言脑洞",
       "url": "api/lastest/female_%E5%8F%A4%E8%A8%80%E8%84%91%E6%B4%9E.json",
-      "book_count": 0
+      "book_count": 15
     },
     {
       "type": "快穿",
@@ -259,7 +259,7 @@
       "channel": "female",
       "key": "female:豪门总裁",
       "url": "api/lastest/female_%E8%B1%AA%E9%97%A8%E6%80%BB%E8%A3%81.json",
-      "book_count": 0
+      "book_count": 15
     },
     {
       "type": "民国言情",
